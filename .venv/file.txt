@@ -7,3 +7,5 @@ git add .->git commit -m "vash comment"->git push origin master
 f;bkjfdwkskvjkjfaojsfqedsx
 
 Nazerke finally did it
+
+Люди, пришлось не со своего гитхаба, а с гитхаба kyimkz загружать
