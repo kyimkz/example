@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # Custom Apps
     'core', 
+    'userauths',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,5 @@ JAZZMIN_SETTINGS = {
     'site_brand' : "KYIM SHOP",
     'copyright' : "kyim.kz",
 }
+
+AUTH_USER_MODEL = 'userauths.User'
