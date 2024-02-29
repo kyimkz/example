@@ -4,5 +4,5 @@ from userauths import views
 app_name = "userauths"
 
 urlpatterns = [
-    path("signup/", views.registerview, name="signup")
+    path("sign-up/", views.register_view, name="signup")
 ]
