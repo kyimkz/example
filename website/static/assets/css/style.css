@@ -25,13 +25,19 @@ html {
 /* header */
 
 header {
-  position: fixed;
   top: 0; left: 0; right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 1rem 9%;
   z-index: 2;
+}
+
+.navbar {
+  display: flex;
+  align-items: first baseline;
+}
+
+.logodiv {
+  width: 30%;
+  align-items: left;
 }
 
 .logo {
@@ -49,6 +55,15 @@ header .logo img:hover {
     -ms-transition: opacity 0.3s ease-in-out;
     -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out; 
+}
+
+.links > div {
+  display: flex;
+  justify-content: center;
+}
+
+.first {
+  width: 50%;
 }
 
 header .navbar {
@@ -77,9 +92,9 @@ header .navbar a:hover {
     transition: opacity 0.3s ease-in-out; 
 }
 
-.header #menu {
+/* .header #menu {
   display: none;
-}
+} */
 
 
 /* header */
