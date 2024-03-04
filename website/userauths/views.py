@@ -31,6 +31,7 @@ def register_view(request):
 
 def login_view(request):
     if request.user.is_authenticated:
+        messages.warning(request, f"You are already Logged In")
         return redirect ("core:index")
     
     if request.method == "POST":
