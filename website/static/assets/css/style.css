@@ -28,24 +28,29 @@ header {
   top: 0; left: 0; right: 0;
   padding: 1rem 9%;
   z-index: 2;
+  position: fixed;
 }
 
 .navbar {
   display: flex;
-  align-items: first baseline;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem;
+  padding: 5px;
 }
 
 .logodiv {
-  width: 30%;
-  align-items: left;
+  position: absolute;
+  left: 3vw;
+  padding: 5px;
 }
 
-.logo {
-  width: auto;
+.nav-item {
+  padding: 3px;
 }
 
 header .logo img {
-  height: 3vw;
+  height: 2.6vw;
 }
 
 header .logo img:hover {
@@ -57,21 +62,32 @@ header .logo img:hover {
     transition: opacity 0.3s ease-in-out; 
 }
 
+.links {
+  display: flexbox;
+  align-items: first baseline;
+  justify-content: baseline;
+}
+
 .links > div {
-  display: flex;
-  justify-content: center;
+  display: flexbox;
 }
 
 .first {
   width: 50%;
+  position: absolute;
+  left: 20vw;
+}
+.second {
+  position: absolute;
+  right: 3vw;
 }
 
-header .navbar {
+/* header .navbar {
   margin-left: 2rem;
-}
-header .navbar .nav-item {
+} */
+/* header .navbar .nav-item {
   margin-left: 2rem;
-}
+} */
 
 header .navbar #close {
   display: none;
@@ -80,7 +96,7 @@ header .navbar #close {
 header .navbar a {
   font-size: 1.5vw;
   margin-right: 2rem;
-  color: #1e201f;
+  color: #222e37;
 }
 
 header .navbar a:hover {
