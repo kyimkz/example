@@ -1,9 +1,10 @@
 from django.shortcuts import redirect, render
 from userauths.forms import UserRegisterForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.models import User
+
 
 
 User = settings.AUTH_USER_MODEL
@@ -27,7 +28,7 @@ def register_view(request):
     context = {
         'form': form,
     }
-    return render (request, "userauths/sign-up.html", context)
+    return render(request, "userauths/sign-up.html", context)
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -57,3 +58,8 @@ def login_view(request):
     }
 
     return render(request, "userauths/sign-in.html", context)
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, "You Logged Out")
+    return redirect("userauths:sign-in")
