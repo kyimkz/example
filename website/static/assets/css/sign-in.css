@@ -21,3 +21,42 @@
 html {
   font-size: 62.5%;
 }
+
+.general {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 30px;
+}
+
+.move {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.function {
+  padding: 20px;
+}
+/* .heading_s1 {
+} */
+
+
+
+
+@media (max-width: 991px){
+  html{
+    font-size: 55%;
+  }
+
+  .general {
+    padding: 2rem;
+  }
+}
