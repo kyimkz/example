@@ -1,14 +1,51 @@
-<div class="heading_s1">
-    <h1 class="mb-5">Login</h1>
-    <p class="mb-30">Don't have an account? <a href="{% url 'userauths:sign-up' %}">Create here</a></p>
-</div>    
-<form method="POST">
-    {% csrf_token %}
-    <div class="form-group">
-        <input type="text" required name="email" placeholder="Username or Email *" />
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kyim / log in</title>
+
+  <!-- website logo template -->
+  <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
+
+  <link rel="stylesheet" href="{% static 'assets/css/sign-in.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <script src="{% static 'assets/js/script.js' %}"></script>
+
+</head>
+
+<body>
+    <div class="general">
+        <div class="image_login">
+            <img src="{% static 'assets/images/products/login.avif' %}" class="image_size">
+        </div>
+        <div class="function">
+            <div class="heading_s1">
+                <h1 class="mb-5">Log-in</h1>
+                <p class="mb-30">Don't have an account? <a href="{% url 'userauths:sign-up' %}">Create here</a></p>
+            </div>    
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="Email" name="email" placeholder="Username or Email *" />
+                </div>
+                <div class="form-group">
+                    <input required type="password" class="Password" name="password" placeholder="Your password *" />
+                </div>
+                <button type="submit" class="buttonLogin">Login</button>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-        <input required type="password" name="password" placeholder="Your password *" />
-    </div>
-    <button type="submit">Login</button>
-</form>
+</body>
+
+</html>
+

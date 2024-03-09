@@ -166,4 +166,19 @@ header .navbar a:hover {
     transition: opacity 0.3s ease-in-out;
 }
 
+.new_season {
+  display: grid;
+  margin: 10px;
+}
+
+.gen {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic {
+  max-width: 200px;
+  height: auto;
+}
 /* home */
