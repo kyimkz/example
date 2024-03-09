@@ -165,20 +165,25 @@ header .navbar a:hover {
     -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
 }
-
-.new_season {
-  display: grid;
-  margin: 10px;
-}
-
-.gen {
-  display: flexbox;
+/* --------------------------------------------------------------------------- */
+/* .new_season {
+  
+} */
+.pic {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.pic {
-  max-width: 200px;
-  height: auto;
+.imgpic {
+  max-width: 10%;
+  max-height: 50%
 }
+.h1 {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+
 /* home */
