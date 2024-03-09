@@ -24,6 +24,34 @@
 </head>
 
 <body>
+    <header>
+        <div class="navbar">
+          <div class="logodiv">
+            <a href="{% url 'core:index' %}" class="logo"> 
+              <img src="{% static 'assets/images/logo/kyim2.png' %}">
+            </a>
+          </div>
+          
+          <div class="first">
+            <a href="#" class="nav-item">clothes</a>
+            <a href="#" class="nav-item">shoes</a>
+            <a href="#new_collection" class="nav-item">new season</a>
+            <a href="#" class="nav-item">recommended</a>
+            <a href="#" class="nav-item">sale</a>
+          </div>
+    
+          <div class="second">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'userauths:sign-out' %}" class="nav-item">sign-out</a>
+            {% else %}
+            <a href="{% url 'userauths:sign-in' %}" class="nav-item">sign-in</a>
+            {% endif %}
+            <a href="#" class="nav-item">search</a>
+            <a href="#" class="nav-item">cart</a>
+          </div>
+        </div>
+        <div id="menu" class="fas fa-bars"></div>
+      </header>
     <div class="general">
         <div class="image_login">
             <img src="{% static 'assets/images/products/signinpic.jpg' %}" class="move" data-speed="-3">
@@ -33,13 +61,13 @@
                 <h1 class="mb-5">Log-in</h1>
                 <p class="mb-30">Don't have an account? <a href="{% url 'userauths:sign-up' %}">Create here</a></p>
             </div>    
-            <form method="POST">
+            <form method="POST" class="form_general">
                 {% csrf_token %}
                 <div class="form-group">
-                    <input type="text" class="Email" name="email" placeholder="Username or Email *" />
+                    <input type="text" class="input_type" name="email" placeholder="Username or Email *" />
                 </div>
                 <div class="form-group">
-                    <input required type="password" class="Password" name="password" placeholder="Your password *" />
+                    <input required type="password" class="input_type" name="password" placeholder="Your password *" />
                 </div>
                 <button type="submit" class="buttonLogin">Login</button>
             </form>

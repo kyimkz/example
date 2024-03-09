@@ -25,7 +25,7 @@
   <header>
     <div class="navbar">
       <div class="logodiv">
-        <a href="#" class="logo"> 
+        <a href="{% url 'core:index' %}" class="logo"> 
           <img src="{% static 'assets/images/logo/kyim2.png' %}">
         </a>
       </div>
@@ -33,7 +33,7 @@
       <div class="first">
         <a href="#" class="nav-item">clothes</a>
         <a href="#" class="nav-item">shoes</a>
-        <a href="#" class="nav-item">new season</a>
+        <a href="#new_collection" class="nav-item">new season</a>
         <a href="#" class="nav-item">recommended</a>
         <a href="#" class="nav-item">sale</a>
       </div>
@@ -60,7 +60,7 @@
         <div class="content">
           <h1 class="title"> Kyim - local brand for you. </h1>
           <div class="button">
-            <a href="#" class="btn"> new season </a>
+            <a href="#new_collection" class="btn"> new season </a>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@
     </section>
 
     <div class="new_season">
-      <div class="h1">
+      <div class="h1" id="new_collection">
         <h1> SPRING COLLECTION </h1>
       </div>
       <div class="gen">
