@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>kyim / log in</title>
+  <title>kyim / sign up</title>
 
   <!-- website logo template -->
   <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
@@ -19,49 +19,88 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-  <script src="{% static 'assets/js/script.js' %}"></script>
-
 </head>
 
 <body>
 
-{% if form.errors %}
-<div class="alert alert-danger">
-    <strong>{{form.errors}}</strong>
-</div>
-{% endif %}
-<div class="heading_s1">
-    <h1 class="mb-5">Create Account</h1>
-    <p class="mb-30">Already have an account? <a href="{% url 'userauths:sign-in' %}">Login</a></p>
-</div>    
-<form method="post" method="POST">
-    {% csrf_token %}
-    <div class="form-group">
-        {{form.username}}
-    </div>
-    <div class="form-group">
-        {{form.email}}
-    </div>
-    <div class="form-group">
-        {{form.password1}}
-    </div>
-    <div class="form-group">
-        {{form.password2}}
+    <header>
+        <div class="navbar">
+          <div class="logodiv">
+            <a href="{% url 'core:index' %}" class="logo"> 
+              <img src="{% static 'assets/images/logo/kyim2.png' %}">
+            </a>
+          </div>
+          
+          <div class="first">
+            <a href="#" class="nav-item">clothes</a>
+            <a href="#" class="nav-item">shoes</a>
+            <a href="#new_collection" class="nav-item">new season</a>
+            <a href="#" class="nav-item">recommended</a>
+            <a href="#" class="nav-item">sale</a>
+          </div>
+    
+          <div class="second">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'userauths:sign-out' %}" class="nav-item">sign-out</a>
+            {% else %}
+            <a href="{% url 'userauths:sign-in' %}" class="nav-item">sign-in</a>
+            {% endif %}
+            <a href="#" class="nav-item">search</a>
+            <a href="#" class="nav-item">cart</a>
+          </div>
+        </div>
+        <div id="menu" class="fas fa-bars"></div>
+    </header>
+
+    <div class="general">
+        <div class="image_login">
+            <img src="{% static 'assets/images/products/login.avif' %}" class="move" data-speed="-3">
+        </div>
+        <div class="function">
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                <strong>{{form.errors}}</strong>
+            </div>
+            {% endif %}
+            <div class="heading_s1">
+                <h1 class="mb-5">Create Account</h1>
+                <p class="mb-30">Already have an account? <a href="{% url 'userauths:sign-in' %}">Login</a></p>
+            </div>    
+            <form method="post" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{form.username}}
+                </div>
+                <div class="form-group">
+                    {{form.email}}
+                </div>
+                <div class="form-group">
+                    {{form.password1}}
+                </div>
+                <div class="form-group">
+                    {{form.password2}}
+                </div>
+            
+            <!-- <form action="" method="POST">
+                {% csrf_token %}
+            
+                {{form.username.label}}
+                {{form.username}}
+                {{form.email.label}}
+                {{form.email}}
+                {{form.password1.label}}
+                {{form.password1}}
+                {{form.password2.label}}
+                {{form.password2}} -->
+                <button type="submit">Register</button>
+            </form>
+        </div>
     </div>
 
-<!-- <form action="" method="POST">
-    {% csrf_token %}
 
-    {{form.username.label}}
-    {{form.username}}
-    {{form.email.label}}
-    {{form.email}}
-    {{form.password1.label}}
-    {{form.password1}}
-    {{form.password2.label}}
-    {{form.password2}} -->
-    <button type="submit">Register</button>
-</form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="{% static 'assets/js/sign-up.js' %}"></script>
 
 </body>
 

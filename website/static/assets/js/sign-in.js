@@ -11,7 +11,7 @@ function move(e){
 }
 
 
-gsap.from('.general', {opacity:0, duration: 1, delay: 0.3, y:30, stagger: 0.2});  
-gsap.from('.logo', {opacity:0, duration: 1, delay: 0.5, y:10});
-gsap.from('.first .nav-item', {opacity:0, duration: 1, delay: 0.3, y:30, stagger: 0.2});  
-gsap.from('.second .nav-item', {opacity:0, duration: 1, delay: 0.5, y:30, stagger: 0.2}); 
+gsap.from('.general', {opacity:0, duration: 1, delay: 0.3, y:1}); 
+gsap.from('.logo', {opacity:0, duration: 1, delay: 0.5, y:10}); 
+gsap.from('.first .nav-item', {opacity:0, duration: 1, delay: 0.5, y:10});
+gsap.from('.second .nav-item', {opacity:0, duration: 1, delay: 0.5, y:10});

@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
-/* .league-spartan-<uniquifier> {
-  font-family: "League Spartan", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
 
 * {
   background-color: rgba(187,195,188,255);
@@ -20,4 +14,104 @@
 
 html {
   font-size: 62.5%;
+}
+
+
+/* header */
+
+header {
+  top: 0; left: 0; right: 0;
+  padding: 1rem 9%;
+  z-index: 2;
+  position: fixed;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem;
+  padding: 5px;
+  background: transparent;
+}
+
+.logodiv {
+  position: absolute;
+  left: 3vw;
+  padding: 5px;
+}
+
+.logo img {
+  height: 2.6vw;
+}
+
+.logo img:hover {
+  opacity:0.5;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.links {
+  display: flexbox;
+  align-items: first baseline;
+  justify-content: baseline;
+}
+
+.links > div {
+  display: flexbox;
+}
+
+.first {
+  width: 50%;
+  position: absolute;
+  left: 20vw;
+}
+.second {
+  position: absolute;
+  right: 3vw;
+}
+
+a {
+  font-size: 1.5vw;
+  margin-right: 2rem;
+  color: #222e37;
+  padding: 3px;
+}
+
+a:hover {
+  opacity:0.5;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+/* header */
+
+
+
+
+.image_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 30px;
+}
+
+.move {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.function {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 }
