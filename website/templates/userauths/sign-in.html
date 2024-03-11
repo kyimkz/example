@@ -23,37 +23,38 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-          <div class="logodiv">
-            <a href="{% url 'core:index' %}" class="logo"> 
-              <img src="{% static 'assets/images/logo/kyim2.png' %}">
-            </a>
-          </div>
-          
-          <div class="first">
-            <a href="#" class="nav-item">clothes</a>
-            <a href="#" class="nav-item">shoes</a>
-            <a href="#new_collection" class="nav-item">new season</a>
-            <a href="#" class="nav-item">recommended</a>
-            <a href="#" class="nav-item">sale</a>
-          </div>
-    
-          <div class="second">
-            {% if request.user.is_authenticated %}
-            <a href="{% url 'userauths:sign-out' %}" class="nav-item">sign-out</a>
-            {% else %}
-            <a href="{% url 'userauths:sign-in' %}" class="nav-item">sign-in</a>
-            {% endif %}
-            <a href="#" class="nav-item">search</a>
-            <a href="#" class="nav-item">cart</a>
-          </div>
-        </div>
-        <div id="menu" class="fas fa-bars"></div>
-      </header>
+  <header>
+    <div class="navbar">
+      <div class="logodiv">
+        <a href="{% url 'core:index' %}" class="logo"> 
+          <img src="{% static 'assets/images/logo/kyim2.png' %}">
+        </a>
+      </div>
+      
+      <div class="first">
+        <a href="#" class="nav-item">clothes</a>
+        <a href="#" class="nav-item">shoes</a>
+        <a href="#new_collection" class="nav-item">new season</a>
+        <a href="#" class="nav-item">recommended</a>
+        <a href="#" class="nav-item">sale</a>
+      </div>
+
+      <div class="second">
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'userauths:sign-out' %}" class="nav-item">sign-out</a>
+        {% else %}
+        <a href="{% url 'userauths:sign-in' %}" class="nav-item">sign-in</a>
+        {% endif %}
+        <a href="#" class="nav-item">search</a>
+        <a href="#" class="nav-item">cart</a>
+      </div>
+    </div>
+    <div id="menu" class="fas fa-bars"></div>
+  </header>
+  
     <div class="general">
         <div class="image_login">
-            <img src="{% static 'assets/images/products/signinpic.jpg' %}" class="move" data-speed="-3">
+            <img src="{% static 'assets/images/icons/undraw/undraw_gone_shopping_re_2lau.svg' %}" class="move" data-speed="-3">
         </div>
         <div class="function">
             <div class="heading_s1">
