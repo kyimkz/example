@@ -1,5 +1,6 @@
 from django.db import models
 from shortuuid.django_fields import ShortUUIDField
+# from shortuuidfield import ShortUUIDField
 from django.utils.html import mark_safe
 from userauths.models import User
 
