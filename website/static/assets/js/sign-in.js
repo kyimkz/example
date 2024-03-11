@@ -11,7 +11,20 @@ function move(e){
 }
 
 
-gsap.from('.general', {opacity:0, duration: 1, delay: 0.3, y:1}); 
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
+
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
+
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
+
+
+gsap.from('.container', {opacity:0, duration: 1, delay: 0.5, y:1}); 
 gsap.from('.logo', {opacity:0, duration: 1, delay: 0.5, y:10}); 
 gsap.from('.first .nav-item', {opacity:0, duration: 1, delay: 0.5, y:10});
 gsap.from('.second .nav-item', {opacity:0, duration: 1, delay: 0.5, y:10});
