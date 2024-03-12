@@ -13,9 +13,9 @@
 
 header {
   top: 0; left: 0; right: 0;
-  /* padding: 1rem 9%; */
   z-index: 2;
   position: fixed;
+  height: 3.5em;
 }
 
 .navbar {
@@ -25,6 +25,17 @@ header {
   margin: 1.5rem;
   padding: 5px;
   background: transparent;
+  height: 3.5em;
+  background-color: transparent;
+  transition: background-color 0.4s ease-in-out;
+  margin: 0; padding: 0;
+}
+
+.scrolled .navbar{
+  background-color: rgb(255, 255, 255);
+  opacity: 0.98;
+  margin: 0; padding: 0;
+  top: 0; left: 0; right: 0;
 }
 
 .logodiv {
@@ -35,7 +46,9 @@ header {
 
 .logo img {
   height: 2.6vw;
+  transition: color 0.4s ease-in-out;
 }
+
 
 .logo img:hover {
   opacity:0.5;
@@ -71,7 +84,9 @@ a {
   margin-right: 2rem;
   color: #222e37;
   padding: 3px;
+  transition: color 0.4s ease-in-out;
 }
+
 
 a:hover {
   opacity:0.5;

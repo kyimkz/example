@@ -161,9 +161,11 @@
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
           ex ratione. Aliquid!
         </p>
-        <button class="btn transparent" id="sign-up-btn">
-          Sign up
-        </button>
+        <a href="{% url 'userauths:sign-up' %}">
+          <button class="btn transparent" id="sign-up-btn" >
+            Sign up
+          </button>
+        </a>
       </div>
       <img src="{% static 'assets/images/icons/undraw/undraw_gone_shopping_re_2lau.svg' %}" class="image" alt="" />
     </div>
