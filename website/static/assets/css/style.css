@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0; padding: 0;
@@ -204,6 +205,19 @@ h1 {
   html{
     font-size: 55%;
   }
+  footer {
+    padding: 40px;
+  }
+  footer .box {
+    width: 33%;
+    display: flex;
+    grid-gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .copyrightText {
+    padding: 20px;
+  }
 }
 
 
@@ -232,108 +246,121 @@ h1 {
     justify-content: center;
     z-index: 1200;
   }
+  footer .box {
+    width: 33%;
+    display: flex;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 20px;
+    flex-direction: column;
+  }
 }
 
 
 /* FOOTER */
 
 
-
+.general_end {
+  display: flex-box;
+  justify-content: end;
+  align-items: end;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 250;
+  font-style: normal;
+  padding: 20px;
+  background-color: #c8c7c7;
+}
 footer {
-  background-color: #ffffff;
-  padding-top: 50px;
+  position: relative;
   width: 100%;
+  height: auto;
+  padding: 50px 100px 50px 100px;
+  background-color: #ffffff;
 }
-.cont {
-  width: 1140px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1vw;
+footer .box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
-.footer-content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-h3 {
-  font-size: 28px;
+
+footer .box .sec h2 {
+  position: relative;
+  color: #1e201f;
+  font-weight: 600;
   margin-bottom: 15px;
-  text-align: center;
 }
-.footer-content p {
-  width: 190px;
-  margin: auto;
-  padding: 7px;
+
+footer .box .sec p {
+  color: #555;
 }
-.footer-content ul {
-  text-align: center;
-}
-.list {
-  padding: 0;
+.sci {
+  list-style-type: none;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-.list li {
-  width: auto;
-  text-align: center;
-  list-style-type: none;
-  padding: 7px;
+
+footer .box .sci {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+}
+footer .box .sci li a {
+  width: 36px;
+  height: 36px;
+  /* background: #333; */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  list-style-type: none
+}
+footer .box .sci li a i {
+  color: #000000;
+  font-size: 20px;
+  text-decoration: none;
+  list-style-type: none
+}
+
+footer .box .quicklinks {
   position: relative;
 }
-.list li::before {
-  content: '';
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 100%;
-  width: 0;
-  height: 2px;
-  background: #375873;
-  transition-duration: .5s;
-}
-.list li:hover::before {
-  width: 70px;
-}
-.social-icons {
-  text-align: center;
-  padding: 0;
-}
-.social-icons li {
-  display: inline-block;
-  text-align: center;
-  padding: 5px;
-}
-.social-icons i{
-  color: #ffffff;
-  font-size: 25px;
-}
-a {
+footer .box .quicklinks ul li {
+  list-style: none;
   text-decoration: none;
 }
-a:hover {
-  color: #222e37;
+footer .box .quicklinks ul li a {
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
 }
-.social-icons i:hover {
-  color: aqua;
+footer .box .contact .info {
+  position: relative;
 }
-.bottom-bar {
-  background: #ffffff;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 50px;
+footer .box .contact .info li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  margin-bottom: 16px;
 }
-.bottom-bar p {
-  color: #1e201f;
-  margin: 0;
-  font-size: 16px;
-  padding: 7px;
+footer .box .contact .info li span {
+  color: #555;
+  font-size: 20px;
+}
+footer .box .contact .info li a {
+  color: #555;
+  text-decoration: none;
 }
 
+.copyrightText {
+  width: 100%;
+  background: #fff;
+  padding: 30px;
+  text-align: center;
+  color: #222e37;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
 
 
 /* FOOTER */
