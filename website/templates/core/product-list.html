@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kyim</title>
+
+  <!-- website logo template -->
+  <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
+
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+      <div class="gen">
+
+
+        <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
+        {% for p in products %}
+        <div class="pic">
+          <img src="{{ p.image.url }}" alt="" class="imgpic">
+          <!-- LIKE THIS!!! -->
+          <p>{{ p.category.title }}</p> 
+          <h2>{{ p.title }}</h2>
+          <p>{{ p.vendor.title }}</p>
+          <p>${{ p.price }}</p>
+        </div>
+        {% endfor %}
+
+
+</body>
+
+</html>  

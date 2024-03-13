@@ -72,10 +72,25 @@
         <h1> SPRING COLLECTION </h1>
       </div>
       <div class="gen">
-        <!-- {% for p in products %}
 
-        {% endfor %} -->
+
+        <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
+        {% for p in products %}
         <div class="pic">
+          <img src="{{ p.image.url }}" alt="" class="imgpic">
+          <!-- LIKE THIS!!! -->
+          <p>{{ p.category.title }}</p> 
+          <h2>{{ p.title }}</h2>
+          <p>{{ p.vendor.title }}</p>
+          <p>${{ p.price }}</p>
+        </div>
+        {% endfor %}
+
+
+
+
+
+        <!-- <div class="pic">
           <img src="{% static 'assets/images/products/firstpic.jpg' %}" alt="" class="imgpic">
         </div>
         <div class="pic">
@@ -83,7 +98,7 @@
         </div>
         <div class="pic">
           <img src="{% static 'assets/images/products/thirdpic.jpg' %}" alt="" class="imgpic">
-        </div>
+        </div> -->
       </div>
     </div>
 

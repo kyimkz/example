@@ -79,13 +79,14 @@ class Product(models.Model):
     pid = ShortUUIDField(unique=True, length=10, max_length=20, alphabet="abcdefgh12345")
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name="category")
+    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
+
     title = models.CharField(max_length=100, default="Some clothes")
     image = models.ImageField (upload_to=user_directory_path, default="product.jpg")
     description = models.TextField(null=True, blank=True, default="This is the product")
 
-    price = models. DecimalField (max_digits=99999999999999, decimal_places=2, default="1.99")#could be changed in future
+    price = models.DecimalField (max_digits=99999999999999, decimal_places=2, default="1.99")#could be changed in future
     old_price = models.DecimalField (max_digits=99999999999999, decimal_places=2, default="2.99")#could be changed in future
     
     specifications = models.TextField(null=True, blank=True)
