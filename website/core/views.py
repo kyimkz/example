@@ -2,7 +2,7 @@ from django.shortcuts import render,HttpResponse
 from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImages, ProductReview, Wishlist, Address
 
 def index(request):
-    products = Product.objects.filter(product_status="published", featured=True).order_by("-id") #this part will allow to list products in landing page, also ordered for latest products to be first shown
+    products = Product.objects.filter(featured=True).order_by("-id") #this part will allow to list products in landing page, also ordered for latest products to be first shown
 
     context = {
         "products": products
