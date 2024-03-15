@@ -24,8 +24,13 @@
                                     <div>
                                         <span>{{r.date|date:"d M, Y"}}</span>
                                     </div>
+                                    <div>
+                                        {% for s in r.rating|ljust:r.rating %}
+                                            <i class = "fas fa-star text-warning"></i>
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                                <p>{{ r.reviews }}</p>
+                                <p>{{ r.review }}</p>
                     {% endfor %}
                     </div>
                     <div>
@@ -33,6 +38,27 @@
                         <h6>{{ average_review.rating|floatformat:1 }} out of 5.0</h6>
                     </div>
                 </div>
+            <!---для комментария-->
+            {% if request.user.is_authenticated %}
+            {% if create_review %}
+
+                <div class = "comment-form">
+                    <h4 class="mb-15 add-review-here">Add a review</h4>
+                        <strong class = "text-success" id= "reviewFinal">  </strong>
+                            <form class = "comment-form hide-comment-form" action= "{% url 'core:add-review' p.id %}" id = "commentForm" method="POST"></form>
+                                {% csrf_token %}
+                                    <div>
+                                        
+                                        {{review_form.review}}
+                                    </div>
+
+                                    <div>
+                                        {{review_form.rating}}
+                                    </div>
+                </div>
+            {% endif %}
+            {% endif %}
+            
     </body>
 
 

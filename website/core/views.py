@@ -1,6 +1,8 @@
 from django.shortcuts import render,HttpResponse
 from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImages, ProductReview, Wishlist, Address
 from django.db.models import Count, Avg
+from core.forms import ProductReviewForm
+from django.http import HttpResponse, JsonResponse
 
 def index(request):
     products = Product.objects.filter(featured=True).order_by("-id") #this part will allow to list products in landing page, also ordered for latest products to be first shown
@@ -52,11 +54,23 @@ def product_detailed_view(request, pid):
     # average reviews
     average_review = ProductReview.objects.filter(product = product).aggregate(rating = Avg('rating'))
 
+    #review form
+    review_form = ProductReviewForm()
+    
+    create_review = True
+
+    if request.user.is_authenticated:
+        user_review_count = ProductReview.objects.filter(user = request.user,product=product).count()
+
+        if user_review_count > 0:
+            create_review = False
 
     p_image = product.p_images.all()
 
     context = {
         "p": product,
+        "create_review": create_review,
+        "review_form": review_form,
         "p_image": p_image,
         "average_review": average_review,
         "reviews": reviews,
@@ -64,3 +78,31 @@ def product_detailed_view(request, pid):
     }
 
     return render(request, "core/product-detail.html", context)
+
+
+def add_review(request, pid):
+    product = Product.objects.get(pk=pid)
+    user = request.user
+
+    review = ProductReview.objects.create(
+        user=user,
+        product = product,
+        review = request.POST['review'],
+        rating = request.POST['rating'],
+    )
+    context = {
+        'user': user.username,
+        'review':request.POST['review'],
+        'rating':request.POST['rating'],
+    }
+
+    average_review = ProductReview.objects.filter(product=product).aggregate(rating = Avg("rating"))
+    
+    return JsonResponse(
+        {
+        'bool': True,
+        'context': context,
+        'average_review' : average_review
+        }
+
+    )
