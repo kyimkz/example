@@ -1,4 +1,7 @@
+{% extends 'partials/base.html' %}
 {% load static %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,44 +21,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
-    <header>
-      <div class="navbar" id="mynav">
-        <div class="logodiv">
-          <a href="{% url 'core:index' %}" class="logo"> 
-            <img src="{% static 'assets/images/logo/kyim2.png' %}">
-          </a>
-        </div>
-
-        <div id="close" class="fas fa-times"></div>
-
-        <div class="first">
-          <a href="#" class="nav-item">clothes</a>
-          <a href="#" class="nav-item">shoes</a>
-          <a href="#new_collection" class="nav-item">new season</a>
-          <a href="#" class="nav-item">recommended</a>
-          <a href="#" class="nav-item">sale</a>
-        </div>
-
-        <div class="second">
-          {% if request.user.is_authenticated %}
-          <a href="{% url 'userauths:sign-out' %}" class="nav-item">sign-out</a>
-          {% else %}
-          <a href="{% url 'userauths:sign-in' %}" class="nav-item">sign-in</a>
-          {% endif %}
-          <a href="#" class="nav-item">search</a>
-          <a href="#" class="nav-item">cart</a>
-        </div>
-
-        <div id="menu" class="fas fa-bars"></div>
-      </div>
-    </header>
-
     <!-- /* home */ -->
 
       <section class="home">
@@ -94,80 +65,10 @@
       </div>
 
     <!-- /* home */ -->
+    {% endblock %}
 
-
-
-    <!-- FOOTER -->
-
-    <div class="general_end">
-      <footer>
-        <div class="box">
-          <div class="sec aboutus">
-            <div class="box_for_p">
-              <h2>About us</h2>
-              <p>Kyim - is a luxurious department store that carries 
-              designer clothes and accessories. They have an 
-              extensive collection of high-end fashion from top 
-              names like Prada, Gucci, and Chanel.
-              </p>
-            </div>
-          </div>
-          <div class="sec quicklinks">
-            <div class="box_for_p">
-              <h2>Support</h2>
-            <ul>
-              <li><a href="">FAQ</a></li>
-              <li><a href="">Privacy Policy</a></li>
-              <li><a href="">Help</a></li>
-              <li><a href="">Contact</a></li>
-            </ul>
-            </div>
-          </div>
-          <div class="sec quicklinks">
-            <div class="box_for_p">
-              <h2>Shop</h2>
-              <ul>
-                <li><a href="">Men</a></li>
-                <li><a href="">Women</a></li>
-                <li><a href="">Kids</a></li>
-                <li><a href="">Shoes</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="sec contact">
-            <h2>Contact us</h2>
-            <ul class="info">
-              <li>
-                <span><i class="fa-solid fa-phone"></i></span><p><a href="tel: +7777 777 77 77">+7 777 777 77 77</a></p>
-              </li>
-              <li>
-                <span><i class="fa-solid fa-envelope"></i></span><p><a href="mailto: kyimkz@gmail.com">kyimkz@gmail.com</a></p>
-              </li>
-              <li>
-                <span><i class="fa-solid fa-location-dot"></i></span><p><a href="address:">Almaty city, Furmanova</a></p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="social_media">
-          <ul class="sci">
-            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-          </ul>
-        </div>
-      </footer>
-      <div class="copyrightText">
-        <p>Copyright 2023 Kyim KZ. All Rights Reserved.</p>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
     <script src="{% static 'assets/js/index.js' %}"></script>
-
   </body>
 </html>  
