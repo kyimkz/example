@@ -32,6 +32,8 @@
           </a>
         </div>
 
+        <div id="close" class="fas fa-times"></div>
+
         <div class="first">
           <a href="#" class="nav-item">clothes</a>
           <a href="#" class="nav-item">shoes</a>
@@ -79,10 +81,12 @@
             <div class="pic">
               <img src="{{ p.image.url }}" alt="" class="imgpic">
               <!-- LIKE THIS!!! -->
-              <p>{{ p.category.title }}</p> 
-              <h2>{{ p.title }}</h2>
-              <p>{{ p.vendor.title }}</p>
-              <p>${{ p.price }}</p>
+              <div class="cat">
+                <p>{{ p.category.title }}</p> 
+                <h2>{{ p.title }}</h2>
+                <p>{{ p.vendor.title }}</p>
+                <p>${{ p.price }}</p>
+              </div>
             </div>
           {% endfor %}
         </div>
@@ -98,36 +102,36 @@
       <footer>
         <div class="box">
           <div class="sec aboutus">
-            <h2>About us</h2>
-            <p>Kyim - is a luxurious department store that carries 
+            <div class="box_for_p">
+              <h2>About us</h2>
+              <p>Kyim - is a luxurious department store that carries 
               designer clothes and accessories. They have an 
               extensive collection of high-end fashion from top 
               names like Prada, Gucci, and Chanel.
-            </p>
-            <ul class="sci">
-              <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-            </ul>
+              </p>
+            </div>
           </div>
           <div class="sec quicklinks">
-            <h2>Support</h2>
+            <div class="box_for_p">
+              <h2>Support</h2>
             <ul>
               <li><a href="">FAQ</a></li>
               <li><a href="">Privacy Policy</a></li>
               <li><a href="">Help</a></li>
               <li><a href="">Contact</a></li>
             </ul>
+            </div>
           </div>
           <div class="sec quicklinks">
-            <h2>Shop</h2>
-            <ul>
-              <li><a href="">Men</a></li>
-              <li><a href="">Women</a></li>
-              <li><a href="">Kids</a></li>
-              <li><a href="">Shoes</a></li>
-            </ul>
+            <div class="box_for_p">
+              <h2>Shop</h2>
+              <ul>
+                <li><a href="">Men</a></li>
+                <li><a href="">Women</a></li>
+                <li><a href="">Kids</a></li>
+                <li><a href="">Shoes</a></li>
+              </ul>
+            </div>
           </div>
           <div class="sec contact">
             <h2>Contact us</h2>
@@ -143,6 +147,14 @@
               </li>
             </ul>
           </div>
+        </div>
+        <div class="social_media">
+          <ul class="sci">
+            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+          </ul>
         </div>
       </footer>
       <div class="copyrightText">

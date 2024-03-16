@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Lancelot&display=swap');
 
 * {
   margin: 0; padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "League Spartan", sans-serif;
   /* font-family: "Poppins", sans-serif; */
 }
 
@@ -17,6 +18,7 @@ header {
   z-index: 2;
   position: fixed;
   height: 3.5em;
+  font-family: "League Spartan", sans-serif;
 }
 
 .navbar {
@@ -43,6 +45,16 @@ header {
   position: absolute;
   left: 3vw;
   padding: 5px;
+}
+
+.header .navbar #close {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  cursor: pointer;
+  font-size: 3rem;
+  color: #fff;
 }
 
 .logo img {
@@ -151,15 +163,47 @@ a:hover {
     transition: opacity 0.3s ease-in-out;
 }
 /* --------------------------------------------------------------------------- */
-/* .new_season {
-  
-} */
+/* new_season */
+
+
+.new_season {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  font-family: "Bona Nova", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 .pic {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
+.imgpic {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  padding: 15px;
+}
+.cat {
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
 .h1 {
   display: flex;
   justify-content: center;
@@ -174,26 +218,17 @@ h1 {
   font-family: "Bodoni Moda", serif;
 }
 
-.header #menu {
+/* new_season */
+
+/* MENU */
+
+.header #menu{
   display: none;
   cursor: pointer;
   font-size: 2.5rem;
-  color: #ffffff;
+  color: #fff;
 }
-
-.gen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.imgpic {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  padding: 5px;
-}
+/* MENU */
 
 /* home */
 
@@ -218,6 +253,9 @@ h1 {
   .copyrightText {
     padding: 20px;
   }
+  .box_for_p {
+    width: 200px;
+  }
 }
 
 
@@ -226,12 +264,13 @@ h1 {
     display: flexbox;
     align-items: center;
   }
-  .header #menu {
+
+  /* MENU */
+  .header #menu{
     display: inline-block;
-    cursor: pointer;
-    font-size: 2.5rem;
-    color: #ffffff;
   }
+
+/* MENU */
 
   .header .navbar {
     position: fixed;
@@ -246,6 +285,11 @@ h1 {
     justify-content: center;
     z-index: 1200;
   }
+  .header .navbar.active {
+    right: 0;
+  }
+  
+
   footer .box {
     width: 33%;
     display: flex;
@@ -253,8 +297,17 @@ h1 {
     grid-gap: 20px;
     flex-direction: column;
   }
+  .box_for_p {
+    width: 200px;
+  }
 }
 
+
+@media (max-width: 400px){
+  .box_for_p {
+    width: 300px;
+  }
+}
 
 /* FOOTER */
 
@@ -263,7 +316,7 @@ h1 {
   display: flex-box;
   justify-content: end;
   align-items: end;
-  font-family: "Montserrat", sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-optical-sizing: auto;
   font-weight: 250;
   font-style: normal;
@@ -275,7 +328,7 @@ footer {
   position: relative;
   width: 100%;
   height: auto;
-  padding: 50px 100px 50px 100px;
+  padding: 50px;
   background-color: #ffffff;
 }
 footer .box {
@@ -284,10 +337,7 @@ footer .box {
   grid-template-columns: 2fr 1fr 1fr 1fr;
   grid-gap: 20px;
   flex-direction: row;
-}
-
-footer .box .sec .aboutus {
-  width: 200px;
+  flex-wrap: wrap;
 }
 
 footer .box .sec h2 {
@@ -299,6 +349,10 @@ footer .box .sec h2 {
 
 footer .box .sec p {
   color: #555;
+  font-size: 1.5vw;
+}
+.box_for_p {
+  width: 17vw;
 }
 .sci {
   list-style-type: none;
@@ -306,10 +360,12 @@ footer .box .sec p {
   justify-content: center;
 }
 
-footer .box .sci {
+.social_media {
   margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 footer .box .sci li a {
   width: 36px;

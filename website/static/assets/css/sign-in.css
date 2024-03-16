@@ -169,6 +169,7 @@ input {
   background-color: #fff;
   min-height: 100vh;
   overflow: hidden;
+  margin-top: 30px;
 }
 
 .forms-container {
@@ -280,8 +281,8 @@ form.sign-in-form {
 }
 
 .social-icon:hover {
-  color: #849ecb;
-  border-color: #7e9aca;
+  color: #cacec6;
+  border-color: #cacec6;
 }
 
 .btn {
