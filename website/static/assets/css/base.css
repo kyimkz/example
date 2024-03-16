@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Lancelot&display=swap');
+
+/* header */
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 9%;
+    z-index: 2;
+    gap: 7vw;
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .header .logo img{
+    height: 3rem;
+    margin-right: 30px;
+  }
+  
+  .header .logo img:hover{
+    height: 3rem;
+    opacity: 0.5;
+  }
+  
+  .header .navbar #close{
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #222e37;
+  }
+  
+  .header .navbar a{
+    font-size: 2vw;
+    margin-right: 2rem;
+    color: #222e37;
+    font-family: "League Spartan", sans-serif;
+  }
+  
+  .header .navbar a:hover{
+    opacity: 0.5;
+  }
+  
+  .header #menu{
+    display: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #222e37;
+  }
+  
+  /* header */
