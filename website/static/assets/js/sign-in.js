@@ -1,3 +1,7 @@
+gsap.from('.container', {opacity:0, duration: 1, delay: 0.5, y:1}); 
+gsap.from('.move', {opacity:0, duration: 1, delay: 0.5, y:1}); 
+gsap.from('.general', {opacity:0, duration: 1, delay: 0.5, y:1});
+
 document.addEventListener('mousemove', move);
 function move(e){
     this.querySelectorAll('.move').forEach(layer =>{
@@ -23,5 +27,3 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
-
-gsap.from('.container', {opacity:0, duration: 1, delay: 0.5, y:1}); 

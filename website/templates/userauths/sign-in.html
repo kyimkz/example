@@ -27,15 +27,15 @@
         <div class="function">
             <div class="heading_s1">
                 <h1 class="mb-5">Log-in</h1>
-                <p class="mb-30">Don't have an account? <a href="{% url 'userauths:sign-up' %}">Create here</a></p>
+                <p class="mb-30">Don't have an account? <a href="{% url 'userauths:sign-up' %}" class="link_create">Create here</a></p>
             </div>    
             <form method="POST" class="form_general">
                 {% csrf_token %}
                 <div class="form-group">
-                    <input type="text" class="input_type" name="email" placeholder="Username or Email *" />
+                    <input type="text" class="input_type" name="email" placeholder="Username or Email" />
                 </div>
                 <div class="form-group">
-                    <input required type="password" class="input_type" name="password" placeholder="Your password *" />
+                    <input required type="password" class="input_type" name="password" placeholder="Your password" />
                 </div>
                 <button type="submit" class="buttonLogin">Login</button>
             </form>
@@ -46,7 +46,7 @@
 
 
 {% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <script src="{% static 'assets/js/sign-in.js' %}"></script>
     </body>
