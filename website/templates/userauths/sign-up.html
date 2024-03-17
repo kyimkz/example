@@ -11,20 +11,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>kyim / sign up</title>
-
-  <!-- website logo template -->
   <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
-
   <link rel="stylesheet" href="{% static 'assets/css/sign-up.css' %}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
 </head>
 
 <body>
+
+<!-- general section -->
     <div class="general">
         <div class="image_login">
             <img src="{% static 'assets/images/icons/undraw/undraw_shopping_re_hdd9.svg' %}" class="move" data-speed="-3">
@@ -53,28 +49,15 @@
                 <div class="form-group">
                     {{form.password2}}
                 </div>
-            
-            <!-- <form action="" method="POST">
-                {% csrf_token %}
-            
-                {{form.username.label}}
-                {{form.username}}
-                {{form.email.label}}
-                {{form.email}}
-                {{form.password1.label}}
-                {{form.password1}}
-                {{form.password2.label}}
-                {{form.password2}} -->
                 <button type="submit">Register</button>
             </form>
         </div>
     </div>
+<!-- general section -->
+
 
     {% endblock %}
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="{% static 'assets/js/sign-up.js' %}"></script>
-
-</body>
-
+    </body>
 </html>

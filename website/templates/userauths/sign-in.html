@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,21 +11,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>kyim / sign in</title>
-
-  <!-- website logo template -->
   <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
-
   <link rel="stylesheet" href="{% static 'assets/css/sign-in.css' %}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
-
 </head>
 
 <body>
+<!-- general function -->
     <div class="general">
         <div class="image_login">
             <img src="{% static 'assets/images/icons/undraw/undraw_gone_shopping_re_2lau.svg' %}" class="move" data-speed="-3">
@@ -46,19 +41,14 @@
             </form>
         </div>
     </div>
+<!-- general function -->
 
 
-<!-- NEW SIGNIN SIGNUP FUNCTIONS -->
 
-
-<!-- NEW SIGNIN SIGNUP FUNCTIONS -->
 {% endblock %}
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-  <script src="{% static 'assets/js/sign-in.js' %}"></script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/js/sign-in.js' %}"></script>
+    </body>
 </html>
 

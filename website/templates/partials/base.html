@@ -5,46 +5,26 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
         <link rel="stylesheet" href="{% static 'assets/css/base.css' %}">
+        <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
      </head>
       
-      <body>
-        <header class="header">
-            <a href="{% url 'core:index' %}" class="logo">
-              <img src="{% static 'assets/images/logo/kyim2.png' %}" alt="">
-            </a>
-      
-            <nav class="navbar">
-              <div id="close" class="fas fa-times"></div>
-      
-              <div class="sections">
-                <a href="#" class="nav_item">clothes</a>
-                <a href="#" class="nav_item">shoes</a>
-                <a href="{% url 'core:product-list' %}" class="nav_item">products</a>
-                <a href="#" class="nav_item">recommended</a>
-                <a href="#" class="nav_item">sale</a>
-              </div>
-      
-              <div class="sections">
-                {% if request.user.is_authenticated %}
-                <a href="{% url 'userauths:sign-out' %}" class="nav-item">sign-out</a>
-                {% else %}
-                <a href="{% url 'userauths:sign-in' %}" class="nav-item">sign-in</a>
-                {% endif %}
-                <a href="#" class="nav_item">search</a>
-                <a href="#" class="nav_item">cart</a>
-                <a href="#" class="nav_item">contact</a>
-              </div>
-      
-            </nav>
-            <div id="menu" class="fas fa-bars"></div>
-        </header>
-        {% block content %}
-        {% endblock %}
+      <body>    
+<!-- header section starts -->
+
+<!-- header section ends -->
 
 
-        <!-- <section>
+
+        <section>
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{message.tags}}">
@@ -58,81 +38,63 @@
                 }, 3000)
             </script>
             
-        </section> -->
-      
-            <!-- <script src = "{% static 'assets/js/function.js' %}"></script> -->
+        </section> 
 
 
-        <!-- FOOTER -->
+        {% block content %}
+        {% endblock %}
 
-        <div class="general_end">
-          <footer>
-            <div class="box">
-              <div class="sec aboutus">
-                <div class="box_for_p">
-                  <h2>About us</h2>
-                  <p>Kyim - is a luxurious department store that carries 
-                  designer clothes and accessories. They have an 
-                  extensive collection of high-end fashion from top 
-                  names like Prada, Gucci, and Chanel.
-                  </p>
-                </div>
-              </div>
-              <div class="sec quicklinks">
-                <div class="box_for_p">
-                  <h2>Support</h2>
-                <ul>
-                  <li><a href="">FAQ</a></li>
-                  <li><a href="">Privacy Policy</a></li>
-                  <li><a href="">Help</a></li>
-                  <li><a href="">Contact</a></li>
-                </ul>
-                </div>
-              </div>
-              <div class="sec quicklinks">
-                <div class="box_for_p">
-                  <h2>Shop</h2>
-                  <ul>
-                    <li><a href="">Men</a></li>
-                    <li><a href="">Women</a></li>
-                    <li><a href="">Kids</a></li>
-                    <li><a href="">Shoes</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="sec contact">
-                <h2>Contact us</h2>
-                <ul class="info">
-                  <li>
-                    <span><i class="fa-solid fa-phone"></i></span><p><a href="tel: +7777 777 77 77">+7 777 777 77 77</a></p>
-                  </li>
-                  <li>
-                    <span><i class="fa-solid fa-envelope"></i></span><p><a href="mailto: kyimkz@gmail.com">kyimkz@gmail.com</a></p>
-                  </li>
-                  <li>
-                    <span><i class="fa-solid fa-location-dot"></i></span><p><a href="address:">Almaty city, Furmanova</a></p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="social_media">
-              <ul class="sci">
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-              </ul>
-            </div>
-          </footer>
-          <div class="copyrightText">
-            <p>Copyright 2023 Kyim KZ. All Rights Reserved.</p>
-          </div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">watch</a></li>
+          <li><a href="#">bag</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">dress</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
+<!-- FOOTER -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
         <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
-        <script src="{% static 'assets/js/index.js' %}"></script>
-  
-      <!-- FOOTER -->
+        <script src="{% static 'assets/js/base.js' %}"></script>
+        <script src = "{% static 'assets/js/function.js' %}"></script>
       </body>
 </html>  
