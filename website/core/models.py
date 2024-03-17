@@ -88,7 +88,7 @@ class Product(models.Model):
 
     price = models.DecimalField (max_digits=99999999999999, decimal_places=2, default="1.99")#could be changed in future
     old_price = models.DecimalField (max_digits=99999999999999, decimal_places=2, default="2.99")#could be changed in future
-    
+    gender = models.CharField(max_length=100, default="Female")
     specifications = models.TextField(null=True, blank=True)
     #tags = models.ForeignKey(Tags, on_delete=models.SET_NULL, null=True)
 
@@ -99,7 +99,7 @@ class Product(models.Model):
     featured = models. BooleanField (default=False)
     digital = models. BooleanField (default=False)
 
-    sku = ShortUUIDField(unique=True, length=4, max_length=10, prefix="sku", alphabet="1234567890")
+    sku = ShortUUIDField(unique=True, length=4, max_length=10, prefix="sku", alphabet="1234567890", null=True)
     
     date = models.DateTimeField (auto_now_add=True)
     updated = models. DateTimeField(null=True, blank=True)
