@@ -19,7 +19,7 @@ def product_list_view(request):
     context = {
         "products": products
     }
-
+    
     return render(request, 'core/product-list.html', context)
 
 def category_list_view(request):
