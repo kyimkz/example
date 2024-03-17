@@ -66,7 +66,19 @@ html{
 .header .navbar a:hover{
   color: var(--hover-color);
 }
-
+.alert li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.errorlist {
+  color: rgb(93, 70, 70);
+  padding: 20px;
+  font-size: 1.8rem;
+  margin: 10px;
+  border-radius: black 10px;
+}
 .header #menu{
   display: none;
   cursor: pointer;
