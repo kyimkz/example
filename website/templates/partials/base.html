@@ -31,7 +31,7 @@
         <nav class="navbar">
             <div id="close" class="fas fa-times" ></div>     
             <div class="link">
-              <a href="#" class="nav_item">clothes</a>
+              <a href="{% url 'core:product-list' %}" class="nav_item">clothes</a>
               <a href="#" class="nav_item">shoes</a>
               <a href="#" class="nav_item">new season</a>
               <a href="#" class="nav_item">recommended</a> 
@@ -41,12 +41,13 @@
             <div class="links" >
               <div class="link" >
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'userauths:sign-out' %}" class="nav_item" >sign-out</a>
+                <a href="{% url 'userauths:sign-out' %}" class=""><i class="fa-solid fa-right-from-bracket"></i></a>
                 {% else %}
-                <a href="{% url 'userauths:sign-in' %}" class="nav_item" >sign-in</a>
+                <a href="{% url 'userauths:sign-in' %}" class=""><i class="fa-regular fa-user"></i></a>
                 {% endif %}
-                <a href="#" class="nav_item" >search</a>
-                <a href="#" class="nav_item">cart</a>
+                <a href="#" class="" ><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#" class=""><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class=""><i class="fa-regular fa-heart"></i></a>
               </div>   
             </div>  
 
@@ -89,7 +90,7 @@
       <div class="footer-col">
         <h4>company</h4>
         <ul>
-          <li><a href="#">about us</a></li>
+          <li><a href="{% url 'core:aboutus' %}">about us</a></li>
           <li><a href="#">our services</a></li>
           <li><a href="#">privacy policy</a></li>
           <li><a href="#">affiliate program</a></li>
@@ -123,6 +124,9 @@
           <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
+    </div>
+    <div class="copyright">
+      <p class="rights">Kyim KZ © — All rights reserved</p>
     </div>
   </div>
 </footer>

@@ -50,18 +50,13 @@ html{
 
 .btn {
   background-color: transparent;
-  font-size:2vw;
+  font-size:2.8vw;
   color: #375873;
   font-family: "Bodoni Moda", serif;
 }
 
 .btn:hover {
-  opacity:0.5;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    -moz-transition: opacity 0.3s ease-in-out;
-    -ms-transition: opacity 0.3s ease-in-out;
-    -o-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
+  color: #1e201f;
 }
 /* --------------------------------------------------------------------------- */
 /* new_season */
