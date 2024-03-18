@@ -18,6 +18,7 @@
         <p>{{ p.vendor.title }}</p>
         <p>${{ p.price }}</p>
         <p>${{ p.description }}</p>
+        <li>Tags: {% for tag in p.tags.all %}<a href="{% url 'core:tags' tag.slug %}" rel="tag">#{{tag.name}}</a>,{% endfor %}</li>
     </div>
     <hr> <!-- просто добавила линию чтоб разделить продукт и ревью коды -->
         <a>Review ({{ reviews.count }})</a>

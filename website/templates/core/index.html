@@ -46,7 +46,7 @@
               <!-- LIKE THIS!!! -->
               <div class="cat">
                 <p>{{ p.category.title }}</p> 
-                <h2>{{ p.title }}</h2>
+                <h2><a href="{% url 'core:product-detail' p.pid %}">{{ p.title }}</a></h2>
                 <p>{{ p.vendor.title }}</p>
                 <p>${{ p.price }}</p>
               </div>

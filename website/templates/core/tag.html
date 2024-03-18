@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    <div class="total-product">
+        <p>There are <strong class="text-brand">{{products.count}}</strong> products for you</p>
+    </div>
       <div class="gen">
         <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
         {% for p in products %}
