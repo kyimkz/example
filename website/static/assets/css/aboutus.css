@@ -1,0 +1,13 @@
+.general {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.about {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    padding: 20px;
+}

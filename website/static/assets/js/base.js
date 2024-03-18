@@ -31,6 +31,7 @@ gsap.from('.navbar .nav_item', {opacity: 0, duration: 1, delay: 1.1, y:30, stagg
 gsap.from('.image_login', {opacity: 0, duration: 1, delay: 1, y:10});
 gsap.from('.function', {opacity: 0, duration: 1, delay: 1, y:10});
 gsap.from('.new_season', {opacity: 0, duration: 1, delay: 1, y:10});
+gsap.from('.links', {opacity: 0, duration: 1, delay: 1.8, y:10});
 
 gsap.from('.title', {opacity: 0, duration: 1, delay: 0.6, y:30})
 gsap.from('.description', {opacity: 0, duration: 1, delay: 0.8, y:30})

@@ -1,5 +1,6 @@
 from django.urls import path
 from core.views import index, product_list_view, category_list_view, category_product_list_view, product_detail_view, add_review
+from core.views import index, product_list_view, category_list_view, category_product_list_view, add_review, aboutus
 
 app_name = "core"
 
@@ -11,7 +12,6 @@ urlpatterns = [
     #Category
     path("category/", category_list_view, name="category-list"),
     path("category/<cid>/", category_product_list_view, name="category-product-list"),
-
-    #add review
+    path("aboutus/", aboutus, name='aboutus'),
     path("add-review/<int:pid>/", add_review, name = "add-review"),
 ]

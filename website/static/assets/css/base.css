@@ -9,7 +9,7 @@
   --primary-color: #222e37; /* Define a root variable for primary color */
   --primary-font: "League Spartan", sans-serif;
   --background-header-navbar: #ffffff;
-  --hover-color: rgb(93, 93, 93);
+  --hover-color: rgb(220, 189, 247);
 }
 
 
@@ -66,19 +66,7 @@ html{
 .header .navbar a:hover{
   color: var(--hover-color);
 }
-.alert li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.errorlist {
-  color: rgb(93, 70, 70);
-  padding: 20px;
-  font-size: 1.8rem;
-  margin: 10px;
-  border-radius: black 10px;
-}
+
 .header #menu{
   display: none;
   cursor: pointer;
@@ -152,6 +140,8 @@ html{
 .container{
 	max-width: 1170px;
 	margin:auto;
+  display: flex;
+  flex-direction: column;
 }
 .row{
 	display: flex;
@@ -166,7 +156,7 @@ ul{
 }
 .footer{
 	background-color: var(--background-header-navbar);
-  padding: 70px 0;
+  padding: 70px 0 0 0;
 }
 .footer-col{
   width: 25%;
@@ -223,6 +213,15 @@ ul{
 .footer-col .social-links a:hover{
 	color: var(--primary-color);
   background-color: rgb(212, 217, 220);
+}
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 30px 30px 30px;
+}
+.rights {
+  font-size: 1.5rem;
 }
 
 /* FOOTER */
