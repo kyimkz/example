@@ -69,7 +69,7 @@ def product_detail_view(request, pid):
         if user_review_count > 0:
             create_review = False
 
-    p_image = product.p_images.all()
+    p_image = product.p_images.all() #this line is used to access all the images of ONE PRODUCT
 
     context = {
         "p": product,

@@ -1,8 +1,25 @@
-<!DOCTYPE html>
+ {% extends 'partials/base.html' %}
+ {% load static %}
+
+{% block content %}
 <!---Это я Аружан, пишу для продукт ревью, буду наикдывать там при дизайне просто вставите написанную
 часть куда нужно и удалите этот коммент-->
-<html lang="en">
-    <body>
+    <div class="product-image-slider">
+        <figure class="border-radius-5">
+            <img src="{{p.image.url}}" alt="product image"/>
+        </figure>
+        {% for p in p_image %}
+        <figure class="border-radius-10">
+            <img src="{{p.images.url}}" alt="product image"/>
+        </figure>
+        {% endfor %}
+        <p>{{ p.category.title }}</p> 
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.vendor.title }}</p>
+        <p>${{ p.price }}</p>
+        <p>${{ p.description }}</p>
+    </div>
+    <hr> <!-- просто добавила линию чтоб разделить продукт и ревью коды -->
         <a>Review ({{ reviews.count }})</a>
             <div>
                 
@@ -58,8 +75,6 @@
                 </div>
             {% endif %}
             {% endif %}
-            
-    </body>
 
-
-</html>
+    </main>
+{% endblock content %}
