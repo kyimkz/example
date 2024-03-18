@@ -3,7 +3,7 @@ from shortuuid.django_fields import ShortUUIDField
 # from shortuuidfield import ShortUUIDField
 from django.utils.html import mark_safe
 from userauths.models import User
-
+from taggit.managers import TaggableManager
 #tuples(ordered sequence of values) containing choices for different fields in the models
 
 STATUS_CHOICE = (
@@ -90,6 +90,8 @@ class Product(models.Model):
     old_price = models.DecimalField (max_digits=99999999999999, decimal_places=2, default="2.99")#could be changed in future
     gender = models.CharField(max_length=100, default="Female")
     specifications = models.TextField(null=True, blank=True)
+
+    tags = TaggableManager(blank=True)
     #tags = models.ForeignKey(Tags, on_delete=models.SET_NULL, null=True)
 
     product_status = models. CharField (choices=STATUS, max_length=10, default="in_review")
