@@ -67,7 +67,7 @@
 }
 
 .link_create:hover {
-  color: var(--hover-color);
+  color: rgb(182, 182, 182);
 }
 .buttonLogin {
   padding: 10px 20px 10px 20px;
