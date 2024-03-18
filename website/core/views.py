@@ -43,7 +43,7 @@ def category_product_list_view(request, cid):
     return render(request, 'core/category-product-list.html', context)
 
 
-def product_detailed_view(request, pid):
+def product_detail_view(request, pid):
     product = Product.objects.get(pid=pid)
 
     products = Product.objects.filter(category = product.category).exclude(pid=pid)
