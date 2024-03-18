@@ -1,0 +1,53 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <p>Vendors count {{vendors.count}} </p>
+    <div>
+        {% for v in vendors %}
+        <div>
+           <div class = "vendor-img">
+                <!--a href = vendor-details-1.html-->
+                <a href = "#">
+                    <img class = "default-img" src = "{{v.image.url}}" alt = "" />
+                </a>
+            </div>
+            <div>
+                <span>{{v.product.all.count}} Products </span>
+            </div> 
+          <div>
+
+            <div>
+                <div>
+                    <span>Since {{v.date|date:"Y"}}</span>
+                </div>
+                <!--a href = vendor-details-1.html-->
+                <h4><a href = "#">{{v.title}}</a></h4>
+            </div>
+            
+                <div>
+                    <ul>
+                        <!-- add image src-->
+                        <li><span></span>{{v.address}}</li>
+                        <li><span></span>{{v.contact}}</li>
+                    </ul>
+                </div>
+          </div> 
+        </div>
+
+        {% endfor %}
+    </div>
+
+</head>
+
+<body>
+
+
+{% endblock content %}
+
+    </body>
+</html>  
