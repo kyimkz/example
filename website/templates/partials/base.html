@@ -32,6 +32,20 @@
             <div id="close" class="fas fa-times" ></div>     
             <div class="link">
               <a href="{% url 'core:product-list' %}" class="nav_item">clothes</a>
+              <a href="#" class="nav_item">category</a>
+
+               <!--НЕ УДАЛЯЙТЕ ЭТУ ЧАСТЬ, ПОДСТАВЬТЕ ПОД НАВБАР, ТУТ ЛУП И ССЫЛКИ. СПЕЦИАЛЬНО В КОММЕНТЕ 
+                <ul>
+                    {% for c in categories %}
+                    <li><a href="{% url 'core:category-product-list' c.cid %}">{{c.title}}</a></li>
+                    {% endfor %}
+                    <li><a href="{% url 'core:category-list' %}">View all</a></li>
+                  
+                </ul>
+
+                -->
+                
+        
               <a href="#" class="nav_item">shoes</a>
               <a href="#" class="nav_item">new season</a>
               <a href="#" class="nav_item">recommended</a> 
