@@ -45,10 +45,10 @@
               <img src="{{ p.image.url }}" alt="" class="imgpic">
               <!-- LIKE THIS!!! -->
               <div class="cat">
-                <p>{{ p.category.title }}</p> 
-                <h2><a href="{% url 'core:product-detail' p.pid %}">{{ p.title }}</a></h2>
-                <p>{{ p.vendor.title }}</p>
-                <p>${{ p.price }}</p>
+                <p class="p_text">{{ p.category.title }}</p> 
+                <h1 style="color: black;"><a href="{% url 'core:product-detail' p.pid %}" class="p2_text">{{ p.title }}</a></h2>
+                <p class="p_text">{{ p.vendor.title }}</p>
+                <p class="p_text">{{ p.price }} tg</p>
               </div>
             </div>
           {% endfor %}

@@ -24,31 +24,28 @@
 html{
   font-size: 62.5%;
 }
-.general {
+.gen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    flex-wrap: wrap;
+}
+.imgpic {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    padding: 15px;
+}
+p {
+    font-size: 1.9rem;
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+.pic {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 50px;
 }
-.about {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    padding: 20px;
-}
-h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    padding-top: 20px;
-    font-size: 2.7vw;
-    font-weight: 600;
-    font-family: "Bodoni Moda", serif;
-    margin: 20px;
-    color: var(--primary-color);
-  }
-  p {
-    font-size: 1.9rem;
-  }

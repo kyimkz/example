@@ -32,18 +32,16 @@
             <div id="close" class="fas fa-times" ></div>     
             <div class="link">
               <a href="{% url 'core:product-list' %}" class="nav_item">clothes</a>
-              <a href="#" class="nav_item">category</a>
+              <a href="{% url 'core:category-list' %}" class="nav_item">category</a>
 
-               <!--НЕ УДАЛЯЙТЕ ЭТУ ЧАСТЬ, ПОДСТАВЬТЕ ПОД НАВБАР, ТУТ ЛУП И ССЫЛКИ. СПЕЦИАЛЬНО В КОММЕНТЕ 
-                <ul>
+               <!--НЕ УДАЛЯЙТЕ ЭТУ ЧАСТЬ, ПОДСТАВЬТЕ ПОД НАВБАР, ТУТ ЛУП И ССЫЛКИ. СПЕЦИАЛЬНО В КОММЕНТЕ  -->
+                <!-- <ul>
                     {% for c in categories %}
                     <li><a href="{% url 'core:category-product-list' c.cid %}">{{c.title}}</a></li>
                     {% endfor %}
                     <li><a href="{% url 'core:category-list' %}">View all</a></li>
                   
-                </ul>
-
-                -->
+                </ul> -->
                 
         
               <a href="#" class="nav_item">shoes</a>
@@ -149,7 +147,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
         <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
         <script src="{% static 'assets/js/base.js' %}"></script>
-        <script src = "{% static 'assets/js/function.js' %}"></script>
+        <script src ="{% static 'assets/js/function.js' %}"></script>
         <script src="{% static 'assets/js/sign-in.js' %}"></script>
       </body>
 </html>  

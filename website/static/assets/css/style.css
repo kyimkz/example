@@ -99,6 +99,7 @@ html{
   align-items: center;
   flex-direction: column;
   gap: 10px;
+  text-decoration-color: #1e201f;
 }
 .h1 {
   display: flex;
@@ -109,9 +110,28 @@ html{
   font-size: 2.5vw;
   font-weight: 300;
 }
+.p_text {
+  font-size: 1.9rem;
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+.p2_text {
+  font-size: 2rem;
+  font-family: "Bodoni Moda", serif;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+.p2_text:hover {
+  color: rgb(90, 18, 18);
+}
 
 h1 {
   font-family: "Bodoni Moda", serif;
+}
+.text {
+  text-decoration: none;
+  color: #1e201f;
 }
 
 /* new_season */

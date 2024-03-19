@@ -1,24 +1,48 @@
- {% extends 'partials/base.html' %}
- {% load static %}
+{% extends 'partials/base.html' %}
+{% load static %}
 
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>products</title>
+
+  <!-- website logo template -->
+  <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
+
+  <link rel="stylesheet" href="{% static 'assets/css/product-detail.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
 <!---Это я Аружан, пишу для продукт ревью, буду наикдывать там при дизайне просто вставите написанную
 часть куда нужно и удалите этот коммент-->
     <div class="product-image-slider">
         <figure class="border-radius-5">
-            <img src="{{p.image.url}}" alt="product image"/>
+            <img src="{{p.image.url}}" alt="product image" class='imgpic'/>
         </figure>
         {% for p in p_image %}
         <figure class="border-radius-10">
             <img src="{{p.images.url}}" alt="product image"/>
         </figure>
         {% endfor %}
-        <p>{{ p.category.title }}</p> 
-        <h2>{{ p.title }}</h2>
-        <p>{{ p.vendor.title }}</p>
-        <p>${{ p.price }}</p>
-        <p>${{ p.description }}</p>
-        <li>Tags: {% for tag in p.tags.all %}<a href="{% url 'core:tags' tag.slug %}" rel="tag">#{{tag.name}}</a>,{% endfor %}</li>
+        <div class="description">
+            <p class="p_text">{{ p.category.title }}</p> 
+            <h2 class="p2_text">{{ p.title }}</h2>
+            <p class="p_text">{{ p.vendor.title }}</p>
+            <p class="p_text">{{ p.price }} tg</p>
+            <p class="p_text">{{ p.description }}</p>
+            <li class="p3_text">Tags: {% for tag in p.tags.all %}<a href="{% url 'core:tags' tag.slug %}" rel="tag">#{{tag.name}}</a>,{% endfor %}</li>
+        </div>
     </div>
     <hr> <!-- просто добавила линию чтоб разделить продукт и ревью коды -->
         <a>Review ({{ reviews.count }})</a>
@@ -78,4 +102,11 @@
             {% endif %}
 
     </main>
-{% endblock content %}
+    {% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/js/product-detail.js' %}"></script>
+</body>
+
+</html>  

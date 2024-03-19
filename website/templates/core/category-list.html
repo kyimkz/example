@@ -1,4 +1,7 @@
+{% extends 'partials/base.html' %}
 {% load static %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +15,7 @@
   <!-- website logo template -->
   <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
 
-  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/category.css' %}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +26,6 @@
 
 <body>
       <div class="gen">
-
-
         <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
         {% for c in categories %}
         <div class="pic">
@@ -34,8 +35,12 @@
           <p>{{ c.category.count }} Product{{c.category.count|pluralize:"s"}}</p> 
         </div>
         {% endfor %}
+      </div>
 
-
+{% endblock %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+      <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+      <script src="{% static 'assets/js/category.js' %}"></script>
 </body>
 
 </html>  
