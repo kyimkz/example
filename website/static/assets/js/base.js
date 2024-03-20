@@ -48,3 +48,8 @@ jQuery(window).on('scroll', function() {
      jQuery('#header_frame').css('background-color', 'transparent');
   }
 });
+
+
+$(window).on("load",function(){
+  $(".loader-wrapper").fadeOut("slow");
+});
