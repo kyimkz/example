@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>kyim</title>
+  <title>kyim - category</title>
 
   <!-- website logo template -->
   <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
@@ -25,31 +25,26 @@
 </head>
 
 <body>
-      <!-- <div class="gen">
-        {% for c in categories %}
-        <div class="pic">
-          <img src="{{ c.image.url }}" alt="" class="imgpic">
-          <p>{{ c.title }}</p> 
-          <p>{{ c.category.count }} Product{{c.category.count|pluralize:"s"}}</p> 
+      <div class="body">
+        <div class="h1">
+          <h1> We present you our new COLLECTION! </h1>
         </div>
-        {% endfor %}
-      </div> -->
-
-      <div class="gen">
-        <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
-       {% for p in products %}
-         <div class="pic">
-           <img src="{{ p.image.url }}" alt="" class="imgpic">
-           <!-- LIKE THIS!!! -->
-           <div class="cat">
-             <p class="p_text">{{ p.category.title }}</p> 
-             <h1><a href="{% url 'core:product-detail' p.pid %}" class="p2_text">{{ p.title }}</a></h2>
-             <p class="p_text">{{ p.vendor.title }}</p>
-             <p class="p_text">{{ p.price }} tg</p>
+        <div class="gen">
+          <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
+         {% for p in products %}
+           <div class="pic">
+             <img src="{{ p.image.url }}" alt="" class="imgpic">
+             <!-- LIKE THIS!!! -->
+             <div class="cat">
+               <p class="p_text">{{ p.category.title }}</p> 
+               <h1><a href="{% url 'core:product-detail' p.pid %}" class="p2_text">{{ p.title }}</a></h2>
+               <p class="p_text">{{ p.vendor.title }}</p>
+               <p class="p_text">{{ p.price }} tg</p>
+             </div>
            </div>
-         </div>
-       {% endfor %}
-     </div>
+         {% endfor %}
+       </div>
+      </div>
 
 {% endblock %}
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
