@@ -31,9 +31,14 @@
         <nav class="navbar">
             <div id="close" class="fas fa-times" ></div>     
             <div class="link">
-              <a href="{% url 'core:product-list' %}" class="nav_item">clothes</a>
+              <li class="li_list"><a href="{% url 'core:category-list' %}" class="nav_item">clothes</a>
+                <ul id="submenu">
+                  {% for c in categories %}
+                  <li><a href="{% url 'core:category-product-list' c.cid %}">{{c.title}} {{ c.category.count }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
 
-<!--НЕ УДАЛЯЙТЕ ЭТУ ЧАСТЬ, ПОДСТАВЬТЕ ПОД НАВБАР, ТУТ ЛУП И ССЫЛКИ. СПЕЦИАЛЬНО В КОММЕНТЕ  -->
                 <!-- <ul>
                     {% for c in categories %}
                     <li><a href="{% url 'core:category-product-list' c.cid %}">{{c.title}}</a></li>
@@ -41,9 +46,9 @@
                     <li><a href="{% url 'core:category-list' %}">View all</a></li>
                   
                 </ul> -->
-              <a href="#" class="nav_item">new season</a>
-              <a href="#" class="nav_item">recommended</a> 
-              <a href="#" class="nav_item">sale</a> 
+              <li class="li_list"><a href="#" class="nav_item">new season</a></li>
+              <li class="li_list"><a href="#" class="nav_item">recommended</a></li>
+              <li class="li_list"><a href="#" class="nav_item">sale</a></li>
             </div>
 
             <div class="links" >
