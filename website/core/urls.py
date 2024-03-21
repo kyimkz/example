@@ -1,5 +1,5 @@
 from django.urls import path
-from core.views import index, product_list_view, category_list_view, category_product_list_view, product_detail_view, add_review, vendor_list_view, vendor_detail_view, tag_list, aboutus
+from core.views import index, product_list_view, category_list_view, details, services, order, returns, career, partnership, payment, category_product_list_view, shipping, product_detail_view, add_review, vendor_list_view, contact, vendor_detail_view, tag_list, aboutus, privacy
 
 app_name = "core"
 
@@ -12,6 +12,16 @@ urlpatterns = [
     path("category/", category_list_view, name="category-list"),
     path("category/<cid>/", category_product_list_view, name="category-product-list"),
     path("aboutus/", aboutus, name='aboutus'),
+    path("privacy/", privacy, name='privacy'),
+    path("contact/", contact, name='contact'),
+    path("shipping/", shipping, name='shipping'),
+    path("returns/", returns, name='returns'),
+    path("payment/", payment, name='payment'),
+    path("details/", details, name='details'),
+    path("partnership/", partnership, name='partnership'),
+    path("career/", career, name='career'),
+    path("order/", order, name='order'),
+    path("services/", services, name='services'),
     path("add-review/<int:pid>/", add_review, name = "add-review"),
 
     #Vendor

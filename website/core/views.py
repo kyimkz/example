@@ -27,6 +27,38 @@ def aboutus(request):
     
     return render(request, 'core/aboutus.html')
 
+def privacy(request):
+    
+    return render(request, 'core/privacy.html')
+
+def contact(request):
+    
+    return render(request, 'core/contact.html')
+def shipping(request):
+    
+    return render(request, 'core/shipping.html')
+def payment(request):
+    
+    return render(request, 'core/payment.html')
+def returns(request):
+    
+    return render(request, 'core/returns.html')
+def career(request):
+    
+    return render(request, 'core/career.html')
+def partnership(request):
+    
+    return render(request, 'core/partnership.html')
+def details(request):
+    
+    return render(request, 'core/details.html')
+def order(request):
+    
+    return render(request, 'core/order.html')
+def services(request):
+    
+    return render(request, 'core/services.html')
+
 def category_list_view(request):
     categories = Category.objects.all()
 
