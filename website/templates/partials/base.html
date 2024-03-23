@@ -53,7 +53,12 @@
                 {% else %}
                 <a href="{% url 'userauths:sign-in' %}" class=""><i class="fa-regular fa-user"></i></a>
                 {% endif %}
-                <a href="#" class="" ><i class="fa-solid fa-magnifying-glass"></i></a>
+                <div class="box">
+                  <form action="{% url 'core:search' %}" method="GET">
+                    <input type="text" placeholder="Search..." name="q">
+                    <button class="fa-solid fa-magnifying-glass" type="submit"></button>
+                  </form>
+                </div>
                 <a href="#" class=""><i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="#" class=""><i class="fa-regular fa-heart"></i></a>
               </div>   

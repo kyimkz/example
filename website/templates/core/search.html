@@ -1,0 +1,60 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kyim. - products</title>
+
+  <!-- website logo template -->
+  <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
+
+  <link rel="stylesheet" href="{% static 'assets/css/products.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="body">
+    <div class="h1">
+      <h1> We present you our new COLLECTION!</h1>
+      {% if products %}
+        <p>{{query}} |</p>
+        {% else %}
+        <p>No Searched Item |</p>
+        {% endif %}
+        <p> There are <strong class="text_brand">{{products.count}}</strong> item{{products.count|pluralize}}</p>
+    </div>
+    <div class="gen">
+      <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
+     {% for p in products %}
+       <div class="pic">
+         <img src="{{ p.image.url }}" alt="" class="imgpic">
+         <!-- LIKE THIS!!! -->
+         <div class="cat">
+           <p class="p_text">{{ p.category.title }}</p> 
+           <h1><a href="{% url 'core:product-detail' p.pid %}" class="p2_text">{{ p.title }}</a></h2>
+           <p class="p_text">{{ p.vendor.title }}</p>
+           <p class="p_text">{{ p.price }} tg</p>
+         </div>
+       </div>
+     {% endfor %}
+   </div>
+  </div>
+{% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/js/products.js' %}"></script>
+</body>
+
+</html>  

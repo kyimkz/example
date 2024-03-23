@@ -172,3 +172,15 @@ def add_review(request, pid):
         }
 
     )
+
+def search_view(request):
+    query = request.GET.get("q")
+
+    products = Product.objects.filter(title__icontains=query).order_by("-date")
+
+    context = {
+        "products": products,
+        "query": query
+    }
+
+    return render(request, "core/search.html", context)

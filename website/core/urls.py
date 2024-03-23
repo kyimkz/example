@@ -1,5 +1,5 @@
 from django.urls import path
-from core.views import index, product_list_view, category_list_view, details, services, order, returns, career, partnership, payment, category_product_list_view, shipping, product_detail_view, add_review, vendor_list_view, contact, vendor_detail_view, tag_list, aboutus, privacy
+from core.views import index, product_list_view, category_list_view, details, services, order, returns, career, partnership, payment, category_product_list_view, shipping, product_detail_view, add_review, vendor_list_view, contact, vendor_detail_view, tag_list, aboutus, privacy, search_view
 
 app_name = "core"
 
@@ -30,4 +30,7 @@ urlpatterns = [
 
     #Tags
     path("products/tag/<slug:tag_slug>/", tag_list, name="tags"),
+
+    #Search
+    path("search/", search_view, name="search"),
 ]
