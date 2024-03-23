@@ -37,7 +37,7 @@
               <li class="li_list"><a href="{% url 'core:category-list' %}" class="nav_item">clothes</a>
                 <ul id="submenu">
                   {% for c in categories %}
-                  <li><a href="{% url 'core:category-product-list' c.cid %}">{{c.title}}</a></li>
+                  <li><a href="{% url 'core:category-product-list' c.cid %}">{{c.title}} / {{c.category.count}}</a></li>
                   {% endfor %}
                 </ul>
               </li>
@@ -55,8 +55,8 @@
                 {% endif %}
                 <div class="box">
                   <form action="{% url 'core:search' %}" method="GET">
-                    <input type="text" placeholder="Search..." name="q">
-                    <button class="fa-solid fa-magnifying-glass" type="submit"></button>
+                    <input type="text" placeholder="search" name="q" class="form_search">
+                    <button class="fa-solid fa-magnifying-glass" type="submit" id="but"></button>
                   </form>
                 </div>
                 <a href="#" class=""><i class="fa-solid fa-cart-shopping"></i></a>
