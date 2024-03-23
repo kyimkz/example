@@ -55,7 +55,7 @@
           <div class="pic">
             <img src="{{ c.image.url }}" alt="" class="imgpic">
             <!-- LIKE THIS!!! -->
-            <p>{{ c.title }}</p> 
+            <p><a href="{% url 'core:category-product-list' c.cid %}" class="p2_text">{{ c.title }}</a></p> 
             <p>{{ c.category.count }} Product{{c.category.count|pluralize:"s"}}</p> 
           </div>
           {% endfor %}
