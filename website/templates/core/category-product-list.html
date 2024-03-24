@@ -1,6 +1,8 @@
 {% extends 'partials/base.html' %}
 {% load static %}
 
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +15,7 @@
   <!-- website logo template -->
   <link rel="shortcut icon" href="{% static 'assets/images/logo/transparent_logo.png' %}" type="image/x-icon">
 
-  <link rel="stylesheet" href="{% static 'assets/css/category.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/category-list.css' %}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +24,12 @@
 
 </head>
 
-{% block content %}
     <div class="body">
       <div class="h1">
-        <p>There are <strong class="text_brand">{{products.count}}</strong> item{{products.count|pluralize}}</p>
-        <h1> We present you our new COLLECTION! </h1>
+        <!-- <p>There are <strong class="text_brand">{{products.count}}</strong> item{{products.count|pluralize}}</p> -->
+        {% for p in products %}
+        <h1 class="move_words"> {{ p.category.title }} </h1>
+        {% endfor %}
       </div>
       <div class="gen">
         <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
@@ -47,7 +50,7 @@
 {% endblock %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
-<script src="{% static 'assets/js/category.js' %}"></script>
+<script src="{% static 'assets/js/category-list.js' %}"></script>
 </body>
 
 </html>  

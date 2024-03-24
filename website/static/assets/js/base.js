@@ -38,6 +38,7 @@ gsap.from('.description', {opacity: 0, duration: 1, delay: 0.8, y:30})
 gsap.from('.btn', {opacity: 0, duration: 1, delay: 1.1, y:30});
 gsap.from('.image', {opacity: 0, duration: 1, delay: 1.6, y:30});
 
+
 gsap.from('.footer', {opacity: 0, duration: 1, delay: 1, y:10});
 
 

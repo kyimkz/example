@@ -38,9 +38,8 @@
         <div class="h1">
           <h1> SPRING COLLECTION </h1>
         </div>
-        <div class="gen">
-           <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
-          <!-- {% for p in products %}
+        <!-- <div class="gen">
+          {% for p in products %}
             <div class="pic">
               <img src="{{ p.image.url }}" alt="" class="imgpic">
               <div class="cat">
@@ -50,17 +49,22 @@
                 <p class="p_text">{{ p.price }} tg</p>
               </div>
             </div>
-          {% endfor %} -->
-          {% for c in categories %}
-          <div class="pic">
-            <img src="{{ c.image.url }}" alt="" class="imgpic">
-            <!-- LIKE THIS!!! -->
-            <p><a href="{% url 'core:category-product-list' c.cid %}" class="p2_text">{{ c.title }}</a></p> 
-            <p>{{ c.category.count }} Product{{c.category.count|pluralize:"s"}}</p> 
-          </div>
           {% endfor %}
+        </div> -->
+        <div class="three">
+          <div class="img_">
+            <img src="{% static 'assets/images/logo/1..webp' %}" alt="" class="imgitself">
+            <li class="box_li"><a href="" class="new">new season</a></li>
+          </div>
+          <div class="img_">
+            <img src="{% static 'assets/images/logo/2..webp' %}" alt="" class="imgitself">
+          </div>
+          <div class="img_">
+            <img src="{% static 'assets/images/logo/3..webp' %}" alt="" class="imgitself">
+          </div>
         </div>
       </div>
+
 
 <!-- /* home */ -->
 

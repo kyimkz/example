@@ -29,22 +29,14 @@ html{
   opacity: 1;
 }
 .gen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.imgpic {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  padding: 15px;
-}
-p {
-  font-size: 1.9rem;
-  font-family: "Montserrat", serif;
-  font-weight: 400;
-  color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    font-family: "Bona Nova", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 .pic {
   display: flex;
@@ -52,19 +44,72 @@ p {
   align-items: center;
   flex-direction: column;
 }
+
+.imgpic {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  padding: 15px;
+}
+.cat {
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration-color: #1e201f;
+}
 .h1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 20px;
   padding-top: 20px;
-  font-size: 2.8vw;
   font-weight: 300;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.p_text {
+  font-size: 1.9rem;
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+.p2_text {
+  font-size: 2rem;
   font-family: "Bodoni Moda", serif;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+.p2_text:hover {
+  color: rgb(90, 18, 18);
+}
+
+h1 {
+  font-family: "Bodoni Moda", serif;
+  margin: 20px;
+  color: var(--primary-color);
+}
+.move_words {
+  position: relative;
+  animation: move-words 6000ms linear infinite;
+  margin: 0;
+  
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  white-space: wrap;
+  padding: 0 6rem;
+  width: max-content;
+}
+@keyframes move-words {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  }
+.text {
+  text-decoration: none;
+  color: #1e201f;
 }

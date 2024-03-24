@@ -68,6 +68,11 @@ html{
   margin-right: 2rem;
   color: var(--primary-color);
 }
+.form_ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .li_list {
   display: inline-block;
   position: relative;
@@ -115,6 +120,7 @@ html{
   padding-top: 5px;
   padding-right: 5px;
   border-radius: 10px;
+  padding-bottom: 5px;
   border-color: #222e37;
   opacity: 0.7;
   fill: transparent;
@@ -127,22 +133,28 @@ html{
   font-size: 2rem;
   margin-left: 2rem;
   color: var(--primary-color);
+  cursor: pointer;
+}
+#but:hover {
+  transform: rotateY(180deg);
+}
+#hov:hover {
+  transform: rotateY(180deg);
 }
 #submenu {
   left: 0;
   opacity: 0;
   position: absolute;
-  top: 35px;
   visibility: hidden;
   z-index: 1;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 150px;
 }
 li:hover ul#submenu {
   opacity: 1;
-  top: 80px;
   visibility: visible;
 }
 #submenu li {
@@ -186,7 +198,8 @@ li:hover ul#submenu {
   margin-right: 20px;
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
+  align-items: center;
 }
 /* header */
 
@@ -363,3 +376,4 @@ ul{
     flex-direction: column;
 }
 }
+

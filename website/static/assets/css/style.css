@@ -134,6 +134,37 @@ h1 {
   color: #1e201f;
 }
 
+
+.three {
+  max-width: 100%;
+  gap: 13px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.imgitself {
+  max-width: 400px;
+  height: auto;
+}
+.box_li {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-rendering: geometricPrecision;
+  justify-content: center;
+}
+.new {
+  color: rgb(81, 22, 22);
+  margin: 0px 0px 150px;
+  font-size: 22px;
+  align-self: center;
+  font-family: "Futura PT";
+  font-weight: 300;
+  border-color: rgb(17, 39, 119);
+  z-index: 2;
+}
 /* new_season */
 
 
