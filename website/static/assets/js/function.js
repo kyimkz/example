@@ -47,3 +47,23 @@ $("#commentForm").submit(function(e){
         }
     })
 })
+
+//FILTERING
+
+
+
+//ADD TO CART
+
+$("#add-to-cart-btn").on("click", function(){
+    let quantity = $("#product-quantity").val()
+    let product_title = $(".product-title").val()
+    let product_id = $(".product-id").val()
+    let product_price = $(".product-current-price").text()
+    let this_val = $(this)
+
+    console.log("Quantity:", quantity);
+    console.log("Title:", product_title);
+    console.log("Price:", product_price);
+    console.log("ID:", product_id);
+    console.log("Current element:", this_val);
+})
