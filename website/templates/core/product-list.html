@@ -29,6 +29,27 @@
       <h1> We present you our new COLLECTION! </h1>
     </div>
     <div class="gen">
+      <h5>Filter by categories</h5>
+        <ul>
+          {% for c in categories %}
+          <li>
+            <input class="form-check-input filter-checkbox" data-filter="category" type="checkbox" name="checkbox" id="checky1" value={{c.id}}>
+            <a href="{% url 'core:category-product-list' c.cid %}">{{c.title}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+  
+        <h5>Filter by vendors</h5>
+        <ul>
+          {% for v in vendors %}
+          <li>
+            <input class="form-check-input filter-checkbox" data-filter="vendor" type="checkbox" name="checkbox" id="checky2" value={{v.id}}>
+            <a href="#">{{v.title}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    <div class="gen" id="filtered-product">
       <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
      {% for p in products %}
        <div class="pic">

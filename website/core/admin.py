@@ -1,8 +1,11 @@
 from django.contrib import admin
-from core.models import Product, Category, Vendor, CartOrder, CartOrderItems, ProductImages, ProductReview, Wishlist, Address
+from core.models import Product, Category, CategoryImages, Vendor, CartOrder, CartOrderItems, ProductImages, ProductReview, Wishlist, Address
 
 class ProductImagesAdmin(admin.TabularInline):
     model = ProductImages
+
+class CategoryImagesAdmin(admin.TabularInline):
+    model = CategoryImages
 
 #list_display specifies the fields to display in the list view of the model in admin panel
 class ProductAdmin(admin.ModelAdmin):
@@ -10,6 +13,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['user', 'title', 'product_image', 'price', 'category', 'vendor', 'featured', 'product_status', 'gender'] 
 
 class CategoryAdmin(admin.ModelAdmin):
+    inlines = [CategoryImagesAdmin]
     list_display = ['title', 'category_image']
 
 class VendorAdmin(admin.ModelAdmin):
