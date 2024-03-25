@@ -4,6 +4,7 @@ from django.db.models import Count, Avg
 from core.forms import ProductReviewForm
 from django.http import HttpResponse, JsonResponse
 from taggit.models import Tag
+from django.template.loader import render_to_string
 
 def index(request):
     products = Product.objects.filter(featured=True).order_by("-id") #this part will allow to list products in landing page, also ordered for latest products to be first shown
@@ -184,3 +185,22 @@ def search_view(request):
     }
 
     return render(request, "core/search.html", context)
+
+def filter_product(request):
+    categories = request.GET.getlist("category[]")
+    vendors = request.GET.getlist("vendor[]")
+
+    # try:
+    #     category_id = int(category_id)
+    # except ValueError:
+    #     return HttpResponseNotFound('Invalid category ID')
+
+    products = Product.objects.all().order_by("-date")
+
+    if len(categories) > 0:
+        products = products.filter(category__id__in=categories).distinct()
+    if len(vendors) > 0:
+        products = products.filter(vendor__id__in=vendors).distinct()
+    
+    data = render_to_string("core/async/product-list.html", {"products": products})
+    return JsonResponse({"data": data})
