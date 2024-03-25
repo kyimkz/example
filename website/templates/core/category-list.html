@@ -27,18 +27,22 @@
 <body>
       <div class="body">
         <div class="h1">
-          <h1> We present you our new COLLECTION! </h1>
+          {% for c in categories %}
+            <li class="link_li"><a href="{% url 'core:category-product-list' c.cid %}" class="link_a"> &nbsp;{{c.title}} / </a></li>
+          {% endfor %}
         </div>
         <div class="gen">
-         {% for c in categories %}
-           <div class="pic">
-             <img src="{{ c.image.url }}" alt="" class="imgpic">
-             <div class="cat">
-                <h1><a href="{% url 'core:category-product-list' c.cid %}" class="p2_text">{{ c.title }}</a></h2>
-                <p>{{ c.category.count }} Product{{c.category.count|pluralize:"s"}}</p> 
-             </div>
-           </div>
-         {% endfor %}
+          {% for p in products %}
+          <div class="pic">
+            <img src="{{ p.image.url }}" alt="" class="imgpic">
+            <div class="cat">
+              <p class="p_text">{{ p.category.title }}</p> 
+              <h1><a href="{% url 'core:product-detail' p.pid %}" class="p2_text">{{ p.title }}</a></h2>
+              <p class="p_text">{{ p.vendor.title }}</p>
+              <p class="p_text">{{ p.price }} tg</p>
+            </div>
+          </div>
+        {% endfor %}
        </div>
       </div>
 

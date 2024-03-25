@@ -46,6 +46,14 @@ class Category(models.Model):
     def __str__(self):
         return self.title
     
+class CategoryImages (models.Model):
+    images = models. ImageField(upload_to="category-images", default="category.jpg")
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    date = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name_plural = "Category Images"
+    
 class Tags(models.Model):
     pass
 
