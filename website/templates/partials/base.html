@@ -34,7 +34,7 @@
         <nav class="navbar">
             <div id="close" class="fas fa-times" ></div>     
             <div class="link">
-              <li class="li_list"><a href="{% url 'core:category-list' %}" class="nav_item">clothes</a>
+              <li class="li_list"><a href="{% url 'core:category-list' %}" class="nav_item">clothing</a>
                 <ul id="submenu">
                   {% for c in categories %}
                   <li><a href="{% url 'core:category-product-list' c.cid %}">{{c.title}} / {{c.category.count}}</a></li>

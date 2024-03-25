@@ -61,9 +61,11 @@ def services(request):
 
 def category_list_view(request):
     categories = Category.objects.all()
+    products = Product.objects.all()
 
     context = {
-        "categories": categories
+        "categories": categories,
+        "products": products
     }
 
     return render(request, 'core/category-list.html', context)

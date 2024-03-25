@@ -18,7 +18,8 @@
   margin: 0; padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  transition: .2s linear;
+  transition: .8s linear;
+  
 }
 
 html{
