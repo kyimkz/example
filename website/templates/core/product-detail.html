@@ -105,6 +105,7 @@
                     <h4 class="mb-15 add-review-here">Add a review</h4>
                         <strong class = "text-success" id= "reviewFinal">  </strong>
                             <form class = "comment-form hide-comment-form" action= "{% url 'core:add-review' p.id %}" id = "commentForm" method="POST"></form>
+                            
                                 {% csrf_token %}
                                     <div>
                                         
@@ -114,6 +115,8 @@
                                     <div>
                                         {{review_form.rating}}
                                     </div>
+
+                                
                 </div>
             {% endif %}
             {% endif %}
