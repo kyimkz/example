@@ -7,9 +7,6 @@ from django.contrib.auth.models import User
 from userauths.models import User
 
 
-
-#User = settings.AUTH_USER_MODEL
-
 def register_view(request):
 
     if request.method == "POST":
