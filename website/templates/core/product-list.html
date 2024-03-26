@@ -29,7 +29,8 @@
       <h1> We present you our new COLLECTION! </h1>
     </div>
     <div class="gen">
-      <h5>Filter by categories</h5>
+      <h3>Filter by categories</h3>
+      &nbsp;
         <ul>
           {% for c in categories %}
           <li>
@@ -38,8 +39,10 @@
           </li>
           {% endfor %}
         </ul>
-  
-        <h5>Filter by vendors</h5>
+    </div>
+    <div class="gen">    
+        <h3>Filter by vendors</h3>
+        &nbsp;
         <ul>
           {% for v in vendors %}
           <li>
@@ -48,7 +51,16 @@
           </li>
           {% endfor %}
         </ul>
-      </div>
+    </div>
+    <div class="gen">    
+        <h3>By Price</h3>
+        &nbsp;
+        <input type="range" value="{{min_to_max_price.price__min|floatformat:2}}" name="range" class="slider-range" id="range" min="{{ min_to_max_price.price__min }}" max="{{ min_to_max_price.price__max }}" oninput="max_price.value=this.value">
+        <input type="number" value="{{min_to_max_price.price__min|floatformat:2}}" id="max_price" min="{{ min_to_max_price.price__min }}" max="{{ min_to_max_price.price__max }}" placeholder="Current Price" onkeyup="range.value=this.value">
+        <button id="price-filter" type="button">Filter</button>
+        <h3>{{ min_to_max_price }}</h3>
+    </div>
+
     <div class="gen" id="filtered-product">
       <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
      {% for p in products %}
@@ -65,11 +77,10 @@
      {% endfor %}
    </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+  <script src="{% static 'assets/js/products.js' %}"></script>
 {% endblock %}
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
-    <script src="{% static 'assets/js/products.js' %}"></script>
 </body>
 
 </html>  

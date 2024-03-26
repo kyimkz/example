@@ -192,12 +192,18 @@ def filter_product(request):
     categories = request.GET.getlist("category[]")
     vendors = request.GET.getlist("vendor[]")
 
+    min_price = request.GET['min_price']
+    max_price = request.GET['max_price']
+
     # try:
     #     category_id = int(category_id)
     # except ValueError:
     #     return HttpResponseNotFound('Invalid category ID')
 
-    products = Product.objects.all().order_by("-date")
+    products = Product.objects.all().order_by("-price")
+
+    products = products.filter(price__gte=min_price)
+    products = products.filter(price__lte=max_price)
 
     if len(categories) > 0:
         products = products.filter(category__id__in=categories).distinct()
