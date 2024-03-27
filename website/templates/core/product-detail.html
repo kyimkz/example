@@ -62,7 +62,7 @@
         </div>
 </div>
     <hr> <!-- просто добавила линию чтоб разделить продукт и ревью коды -->
-        <a>Review ({{ reviews.count }})</a>
+        <h2>Review ({{ reviews.count }})</h2>
             <div>
                 
                 <img src = "https://t3.ftcdn.net/jpg/03/58/90/78/360_F_358907879_Vdu96gF4XVhjCZxN2kCG0THTsSQi8IhT.jpg" alt ="" />
@@ -94,7 +94,7 @@
                     </div>
                     <div>
                         <!--Для средней оценки-->
-                        <h6>{{ average_review.rating|floatformat:1 }} out of 5.0</h6>
+                        <h2>{{ average_review.rating|floatformat:1 }} out of 5.0</h2>
                     </div>
                 </div>
             <!---для комментария-->
@@ -102,7 +102,7 @@
             {% if create_review %}
 
                 <div class = "comment-form">
-                    <h4 class="mb-15 add-review-here">Add a review</h4>
+                    <h2 class="mb-15 add-review-here">Add a review</h2>
                         <strong class = "text-success" id= "reviewFinal">  </strong>
                             <form class = "comment-form hide-comment-form" action= "{% url 'core:add-review' p.id %}" id = "commentForm" method="POST"></form>
                             
