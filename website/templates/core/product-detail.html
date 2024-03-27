@@ -52,7 +52,7 @@
             <li class="p3_text">Tags: {% for tag in p.tags.all %}<a href="{% url 'core:tags' tag.slug %}" rel="tag">#{{tag.name}}</a>,{% endfor %}</li>
         </div>
     </section>
-    <!---ADD TO CART PART-->
+    <!---################################################### ADD TO CART PART ######################################################-->
     <h1 style=font-size:40px>Add to cart</h1>
     <div>
         <input type = "number" value = "1" name = "" id = "product-quantity" class = "w-25">
@@ -68,36 +68,36 @@
     &nbsp; 
     <!-- ############################ ниже показываются все прошлые ревью каждого юзера ########################################## -->
         <h2>Review ({{ reviews.count }})</h2> 
-                <div class = "comment-list">
-                    {% for r in reviews %}
+            <div class = "comment-list">
+                {% for r in reviews %}
+                <div>
+                    <img src = "https://t3.ftcdn.net/jpg/03/58/90/78/360_F_358907879_Vdu96gF4XVhjCZxN2kCG0THTsSQi8IhT.jpg" width="200" 
+                    height="200" alt ="" /> &nbsp;
+                    <a href = "#" class= "font-heading text-brand">{{r.user.username|title}}</a> &nbsp;
+                    <!---ссылка для того что бы ревью брали имя пользователяб при дизайне расположите его правильно!-->
                     <div>
-                        <img src = "https://t3.ftcdn.net/jpg/03/58/90/78/360_F_358907879_Vdu96gF4XVhjCZxN2kCG0THTsSQi8IhT.jpg" width="200" 
-                        height="200" alt ="" /> &nbsp;
-                        <a href = "#" class= "font-heading text-brand">{{r.user.username|title}}</a> &nbsp;
-                        <!---ссылка для того что бы ревью брали имя пользователяб при дизайне расположите его правильно!-->
                         <div>
-                            <div>
-                                <span>{{r.date|date:"d M, Y"}}</span>&nbsp;
-                            </div>
-                            <div>
-                                {% for s in r.rating|ljust:r.rating %}
-                                    <i class = "fas fa-star text-warning"></i>&nbsp;
-                                {% endfor %}
-                            </div>
+                            <span>{{r.date|date:"d M, Y"}}</span>&nbsp;
                         </div>
-                        <p>{{ r.review }}</p>
+                        <div>
+                            {% for s in r.rating|ljust:r.rating %}
+                                <i class = "fas fa-star text-warning"></i>&nbsp;
+                            {% endfor %}
+                        </div>
                     </div>
-                    &nbsp;
-                    &nbsp;
-                    {% endfor %}
-                    <div>
-                        <!--Для средней оценки-->
-                        <h2>{{ average_rating.rating|floatformat:1 }} out of 5.0</h2>
-                    </div>
+                    <p>{{ r.review }}</p>
                 </div>
-    <!-- ############################выше показываются все прошлые ревью каждого юзера########################################## -->
+                &nbsp;
+                &nbsp;
+                {% endfor %}
+                <div>
+                    <!--Для средней оценки-->
+                    <h2>{{ average_rating.rating|floatformat:1 }} out of 5.0</h2>
+                </div>
+            </div>
 
-            <!---для нового комментария-->
+    <!---######################################### для нового комментария ####################################################-->
+
             {% if request.user.is_authenticated %}
             {% if create_review %}
 
@@ -126,6 +126,26 @@
                 </div>
             {% endif %}
             {% endif %}
+    <!-- ###################################################### Related Products ############################################################################ -->
+        <hr>
+        &nbsp;
+        &nbsp;
+        {% if products %}
+            <h2>Related Products</h2> <!-- тут он просто вытаскивает другие товары из этой категории -->
+        {% endif %}
+            <div class="row related-products">
+                {% for p in products %}
+                    <img class="default" width="20%" height="20%" src="{{ p.image.url }}" alt="related product">
+                    <div class = "product-price">
+                        <p><a href="{% url 'core:product-detail' p.pid %}" >{{p.title|truncatechars:20}}</a></p>
+                        <span class = "product-current-price"><p class="p_text">{{ p.price }} tg</p></span>
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                {% endfor %}
+            </div>
 
     </main>
     {% endblock %}
