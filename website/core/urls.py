@@ -22,6 +22,8 @@ urlpatterns = [
     path("career/", career, name='career'),
     path("order/", order, name='order'),
     path("services/", services, name='services'),
+
+    #Add Review
     path("add-review/<int:pid>/", add_review, name = "add-review"),
 
     #Vendor

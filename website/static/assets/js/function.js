@@ -4,6 +4,8 @@ console.log("working");
 const months = ["Jan", "Feb","March", "April", "May", "June", 
 "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
+// ########################################################## ADD REVIEW ####################################################################
+
 $("#commentForm").submit(function(e){
     e.preventDefault();
 
@@ -25,8 +27,8 @@ $("#commentForm").submit(function(e){
 
                 // расположить див с начала лупа до его конца(не включая луп)
                 let _html = '<div>'
-                    _html += '<a href = "#" class= "font-heading text-brand">' + response.context.user + '</a>'
-                            
+                    _html += '<img src = "https://t3.ftcdn.net/jpg/03/58/90/78/360_F_358907879_Vdu96gF4XVhjCZxN2kCG0THTsSQi8IhT.jpg" width="200" height="200" alt ="" />'
+                    _html += '<a href = "#" class= "font-heading text-brand">' + response.context.user + '</a> &nbsp;'        
                     _html += '<div>'
                     _html += '<div>'
                     _html += '<span>' + time + '</span>'
@@ -39,6 +41,7 @@ $("#commentForm").submit(function(e){
 
                     _html += '</div>'
                     _html += '<p>'+ response.context.review + '</p>'
+                    _html += '</div>'
                     $(".comment-list").prepend(_html)
             }
             // работа для comment-list
@@ -48,7 +51,7 @@ $("#commentForm").submit(function(e){
     })
 })
 
-// filter function 
+// ########################################################### FILTER FUNCTION ###############################################################
 
 $(document).ready(function () {
     $(".filter-checkbox, #price-filter").on("click", function(){
@@ -109,7 +112,7 @@ $(document).ready(function () {
     })
 })
 
-
+// ############################################################ ADD TO CART ##################################################################
 
 $("#add-to-cart-btn").on("click", function(){
     let quantity = $("#product-quantity").val()

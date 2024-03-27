@@ -104,22 +104,23 @@ def product_detail_view(request, pid):
 
     products = Product.objects.filter(category = product.category).exclude(pid=pid)
 
-    # ------->Getting reviews<-------
+    # ------->Getting all reviews related to a product<-------
     reviews = ProductReview.objects.filter(product = product).order_by("-date")
 
     # average reviews
-    average_review = ProductReview.objects.filter(product = product).aggregate(rating = Avg('rating'))
+    average_rating = ProductReview.objects.filter(product = product).aggregate(rating = Avg('rating'))
 
     #review form
     review_form = ProductReviewForm()
     
+    # ↓ ↓ ↓ ↓ ↓ ↓ эту часть кода закомментила чтоб юзер мог оставлять несколько комментариев
     create_review = True
+ 
+    # if request.user.is_authenticated:
+    #     user_review_count = ProductReview.objects.filter(user = request.user,product=product).count()
 
-    if request.user.is_authenticated:
-        user_review_count = ProductReview.objects.filter(user = request.user,product=product).count()
-
-        if user_review_count > 0:
-            create_review = False
+    #     if user_review_count > 0:
+    #         create_review = False
 
     p_image = product.p_images.all() #this line is used to access all the images of ONE PRODUCT
 
@@ -128,7 +129,7 @@ def product_detail_view(request, pid):
         "create_review": create_review,
         "review_form": review_form,
         "p_image": p_image,
-        "average_review": average_review,
+        "average_rating": average_rating,
         "reviews": reviews,
         "products" : products,
     }
@@ -165,15 +166,14 @@ def add_review(request, pid):
         'rating':request.POST['rating'],
     }
 
-    average_review = ProductReview.objects.filter(product=product).aggregate(rating = Avg("rating"))
+    average_reviews = ProductReview.objects.filter(product=product).aggregate(rating = Avg("rating"))
     
     return JsonResponse(
         {
         'bool': True,
         'context': context,
-        'average_review' : average_review
+        'average_reviews' : average_reviews
         }
-
     )
 
 def search_view(request):
