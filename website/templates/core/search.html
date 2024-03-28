@@ -26,19 +26,19 @@
 <body>
   <div class="body">
     <div class="h1">
-      <h1> What are you looking for?</h1>
+      <!-- <h1> What are you looking for?</h1> -->
       <!-- <form action="{% url 'core:search' %}" method="GET">
         <input type="text" placeholder="search" name="q" class="form_search">
         <button class="fa-solid fa-magnifying-glass" type="submit" id="but"></button>
       </form> -->
       <div class="sss">
         {% if products %}
-        <div class="searched">
-          <p>{{query}} &nbsp;| </p>
+        <div>
+          <p class="searched"> {{query}} &nbsp;| </p>
         </div>
         {% else %}
-        <div class="not_searched">
-          <p>No Searched Item &nbsp; | <p>&nbsp;</p> </p>
+        <div>
+          <p  class="searched">No Searched Item &nbsp; | <p>&nbsp;</p> </p>
         </div>
         {% endif %}
         <div class="there">

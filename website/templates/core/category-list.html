@@ -26,23 +26,70 @@
 
 <body>
       <div class="body">
-        <div class="h1">
+        <!-- <div class="h1">
           {% for c in categories %}
             <li class="link_li"><a href="{% url 'core:category-product-list' c.cid %}" class="link_a"> &nbsp;{{c.title}} / </a></li>
           {% endfor %}
-        </div>
-        <div class="gen">
-          {% for p in products %}
-          <div class="pic">
-            <img src="{{ p.image.url }}" alt="" class="imgpic">
-            <div class="cat">
-              <p class="p_text">{{ p.category.title }}</p> 
-              <h1><a href="{% url 'core:product-detail' p.pid %}" class="p2_text">{{ p.title }}</a></h2>
-              <p class="p_text">{{ p.vendor.title }}</p>
-              <p class="p_text">{{ p.price }} tg</p>
+        </div> -->
+        <div class="body">
+          <div class="gen1">
+            <div class="horizontal">
+              <h3>Filter by categories</h3>
             </div>
+            &nbsp;
+            <ul class="horizontal">
+              {% for c in categories %}
+              <li class="each_box">
+                <div class="boxxx">
+                  <input class="form-check-input filter-checkbox" data-filter="category" type="checkbox" name="checkbox" id="checky1" value={{c.id}}>
+                </div>
+                <div class="boxxx">
+                  <a href="{% url 'core:category-product-list' c.cid %}" id="word">{{c.title}}</a>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
-        {% endfor %}
+          <!-- <div class="gen">    
+              <h3>Filter by vendors</h3>
+              &nbsp;
+              <ul>
+                {% for v in vendors %}
+                <li>
+                  <input data-filter="vendor" type="checkbox" name="checkbox" id="checky2" value={{v.id}}>
+                  <a href="#">{{v.title}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+          </div> -->
+          <div class="gen">    
+            <div class="prices">
+              <h3> minimum price: {{ min_to_max_price.price__min }}</h3>
+              <h3> maximum price: {{ min_to_max_price.price__max }}</h3>
+            </div>
+              <h3>By Price</h3>
+              &nbsp;
+              <input type="range" value="{{min_to_max_price.price__min|floatformat:2}}" name="range" class="slider-range" id="range" min="{{ min_to_max_price.price__min }}" max="{{ min_to_max_price.price__max }}" oninput="max_price.value=this.value">
+              <input type="number" value="{{min_to_max_price.price__min|floatformat:2}}" id="max_price" min="{{ min_to_max_price.price__min }}" max="{{ min_to_max_price.price__max }}" placeholder="Current Price" onkeyup="range.value=this.value">
+              <button id="price-filter" type="button">Filter</button>
+          </div>
+      
+          <div class="gen" id="filtered-product">
+            <!-- THIS PART IS IMPORTANT CAUSE THE DETAILS SHOULD BE DRAGGED FROM DATABASE USING DJANGO -->
+           {% for p in products %}
+             <div class="pic">
+               <img src="{{ p.image.url }}" alt="" class="imgpic">
+               <!-- LIKE THIS!!! -->
+               <div class="cat">
+                 <p class="p_text">{{ p.category.title }}</p> 
+                 <h1><a href="{% url 'core:product-detail' p.pid %}" class="p2_text">{{ p.title }}</a></h2>
+                 <p class="p_text">{{ p.vendor.title }}</p>
+                 <p class="p_text">{{ p.price }} tg</p>
+               </div>
+             </div>
+           {% endfor %}
+         </div>
+        </div>
        </div>
       </div>
 
